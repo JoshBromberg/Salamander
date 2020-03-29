@@ -219,9 +219,6 @@
     <ClCompile Include="..\src\Start_Scene_Bg.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\StartButton.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\EnemyCannonballAI.cpp">
       <Filter>Source Files\AIs</Filter>
     </ClCompile>
@@ -241,9 +238,6 @@
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Shield.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Level3Button.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Power_Up.cpp">
@@ -269,15 +263,6 @@
     </ClCompile>
     <ClCompile Include="..\src\Level2.cpp">
       <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Level2Button.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Guild1_Button.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Guild2_Button.cpp">
-      <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\PlayerEntry.cpp">
       <Filter>Source Files</Filter>
@@ -470,9 +455,6 @@
     <ClInclude Include="..\src\Start_Scene_Bg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\StartButton.h">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\EnemyCannonballAI.h">
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
@@ -493,9 +475,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Shield.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Level3Button.h">
-      <Filter>Source Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Power_Up.h">
       <Filter>Header Files</Filter>
@@ -520,15 +499,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Level2.h">
       <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Level2Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Guild1_Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Guild2_Button.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\PlayerEntry.h">
       <Filter>Header Files</Filter>

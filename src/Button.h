@@ -8,8 +8,8 @@
 class Button : public DisplayObject
 {
 public:
-	Button(std::string buttonName = "startButton",
-		GameObjectType type = START_BUTTON, 
+	Button(std::string buttonName = "PlayButton",
+		GameObjectType type = PLAY_BUTTON, 
 		glm::vec2 position = glm::vec2(0.0f, 0.0f), bool isCentered = true);
 	
 	virtual ~Button();

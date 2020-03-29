@@ -5,11 +5,7 @@
 #include "Scene.h"
 #include "Label.h"
 #include "Start_Scene_Bg.h"
-#include "StartButton.h"
-#include "Level3Button.h"
-#include "Level2Button.h"
-#include "Guild1_Button.h"
-#include "Guild2_Button.h"
+#include "Button.h"
 
 class StartScene : public Scene
 {

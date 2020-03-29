@@ -34,13 +34,13 @@ void StartScene::update()
 	{
 		TheGame::Instance()->changeSceneState(LEVEL1_SCENE);
 	}
-	else if(m_pInstructionsButton->ButtonClick())
+	else if(m_pInstructionsButton->ButtonClick() && !instructions)
 	{
 		instructions = true;
 	}
 	else if(m_pExitButton->ButtonClick())
 	{
-		exit;
+		exit(0);
 	}
 	else if(m_pLoadButton->ButtonClick())
 	{
@@ -124,21 +124,21 @@ void StartScene::start()
 	
 	m_pStartButton = new Button(
 		"PlayButton",
-		PLAY_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.9f));
+		PLAY_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.75f));
 	addChild(m_pStartButton);
 	//playSound("Menu", 999);
 	
 	m_pInstructionsButton = new Button(
 		"InstructionsButton",
-		INSTRUCTIONS_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.75f, Config::SCREEN_HEIGHT * 0.9f));
+		INSTRUCTIONS_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.75f));
 	addChild(m_pInstructionsButton);
 	
 	m_pExitButton = new Button("ExitButton",
-		EXIT_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.25f, Config::SCREEN_HEIGHT * 0.9f));
+		EXIT_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.9f));
 	addChild(m_pExitButton);
 
 	m_pLoadButton = new Button("LoadButton",
-		LOAD_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.8f));
+		LOAD_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.75f));
 	addChild(m_pLoadButton);
 	
 
