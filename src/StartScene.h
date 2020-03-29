@@ -31,6 +31,7 @@ private:
 	Button* m_pInstructionsButton;
 	Button* m_pExitButton;
 	Button* m_pLoadButton;
+	Label* m_pInstructionsText;
 
 	
 	//methods

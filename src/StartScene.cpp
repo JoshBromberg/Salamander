@@ -21,6 +21,9 @@ void StartScene::draw()
 	m_pInstructionsButton->draw();
 	m_pExitButton->draw();
 	m_pLoadButton->draw();
+	if (instructions) {
+		m_pInstructionsText->draw();
+	}
 }
 
 void StartScene::update()
@@ -126,7 +129,7 @@ void StartScene::start()
 		"PlayButton",
 		PLAY_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.75f));
 	addChild(m_pStartButton);
-	//playSound("Menu", 999);
+	playSound("Menu", 999);
 	
 	m_pInstructionsButton = new Button(
 		"InstructionsButton",
@@ -141,13 +144,16 @@ void StartScene::start()
 		LOAD_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.75f));
 	addChild(m_pLoadButton);
 	
-
+	m_pInstructionsText = new Label("Use WASD or arrow keys to move. Left-Click to fire.", "FSEX300",
+		40, {(255), (255), (255), (255)}, glm::vec2(Config::SCREEN_WIDTH * 0.1f, Config::SCREEN_HEIGHT * 0.1f),
+		false, false);
+	addChild(m_pInstructionsText);
 }
 
 void StartScene::loadAllSounds()
 {
 	std::cout << "Loading sounds" << std::endl;
-	//loadSound("../Assets/audio/menu.ogg", "Menu", SOUND_MUSIC);
+	loadSound("../Assets/audio/Menu.ogg", "Menu", SOUND_MUSIC);
 	std::cout << "Finished loading sounds" << std::endl;
 }
 
