@@ -29,19 +29,19 @@ private:
 	glm::vec2 m_mousePosition;
 
 	//game objects
-	Label* m_pStartLabel;
-	Label* m_pGuildLabel;
 	Start_Scene_Bg* m_pStart_Scene_Bg;
-	StartButton* m_pStartButton;
-	Level2Button* m_pLevel2Button;
-	Level3Button* m_pLevel3Button;
-	Guild1_Button* m_pGuild1_Button;
-	Guild2_Button* m_pGuild2_Button;
+	Button* m_pStartButton;
+	Button* m_pPlayButton;
+	Button* m_pInstructionsButton;
+	Button* m_pExitButton;
+	Button* m_pLoadButton;
 
 	
 	//methods
 	void loadAllSounds();
 	void loadAllTextures();
+
+	bool instructions = false;
 };
 
 #endif /* defined (__START_SCENE__) */

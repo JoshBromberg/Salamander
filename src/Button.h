@@ -22,16 +22,14 @@ public:
 	void setMousePosition(glm::vec2 mousePosition);
 	void setMouseButtonClicked(bool clicked);
 
-	virtual bool ButtonClick() = 0;
+	bool ButtonClick();
 	
 private:
 	Uint8 m_alpha;
 	std::string m_name;
 	bool m_isCentered;
 	glm::vec2 m_mousePosition;
-	
-	
-protected:
+	bool m_isClicked;
 	// getters
 	bool m_mouseButtonClicked;
 	bool m_mouseOver();
