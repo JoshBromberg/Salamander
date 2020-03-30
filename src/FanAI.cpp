@@ -15,7 +15,7 @@ FanAI::FanAI(glm::vec2 transform, int i)
 	target = glm::vec2(Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT/2);
 	score = 180;
 	yDirection = i < 0 ? -1 : 1;
-	target2 = { Config::SCREEN_WIDTH * 0.83, Config::SCREEN_HEIGHT / ((2 + i) / 4) };
+	target2 = { Config::SCREEN_WIDTH * 0.8, i == 1 ? Config::SCREEN_HEIGHT * 0.67 : Config::SCREEN_HEIGHT * 0.33 };
 	isBoss = false;
 }
 
@@ -34,13 +34,16 @@ void FanAI::SecondaryFunction()
 			entrySpeed.x = -baseSpeed;
 			break;
 		case 2:
+			backTarget = true;
 			target = target2;
 			entrySpeed.y = baseSpeed * yDirection;
-			entrySpeed.x = baseSpeed/3;
+			entrySpeed.x = baseSpeed / 3;
+			break;
 		case 3:
 			entrySpeed.x = -baseSpeed;
 			entrySpeed.y = 0;
 			target = { -500, parent->getPosition().y };
+			backTarget = false;
 			break;
 		}
 	}

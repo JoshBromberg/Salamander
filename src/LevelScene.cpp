@@ -91,7 +91,7 @@ void LevelScene::update()
 	if (fanIteration < fanSpawnTimer.size()) {
 		if (time == fanSpawnTimer[fanIteration])
 		{
-			spawnEnemy(new FanAI(fanSpawnLocation[fanIteration], fanIteration % 2 == 0 ? 1 : -1));
+			spawnEnemy(new FanAI(fanSpawnLocation[fanIteration], (fanIteration / 5) % 2 == 0 ? 1 : -1));
 			++fanIteration;
 		}
 	}

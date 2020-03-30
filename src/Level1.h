@@ -15,5 +15,7 @@ public:
 	void start() override;
 	void loadAllTextures();
 	void loadAllSounds();
+private:
+	glm::vec2 c = { 1380, 360 };
 };
 #endif /* defined __LEVEL1__ */
