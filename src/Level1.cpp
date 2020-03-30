@@ -23,7 +23,7 @@ Level1::Level1()
 	m_pMap = new Map();
 	m_pMap2 = new Map();
 	m_pMap->setPosition(glm::vec2(0, 0));
-	m_pMap2->setPosition(glm::vec2(1950, 0));
+	m_pMap2->setPosition(glm::vec2(1280, 0));
 	//m_pSpeedLabel = new Label("Speed: ", "Consolas",
 	//	24, yellow, glm::vec2(Config::SCREEN_WIDTH * 0.45f, 10.0f), TTF_STYLE_NORMAL, false);
 	playSound("Level1", 1);
@@ -57,16 +57,8 @@ void Level1::start()
 }
 void Level1::loadAllTextures()
 {
-	//load the texture with loadTexture() with params path and id respectively
-	if(Game::Instance()->getGuild() == 1)
-	{
-		loadTexture("../Assets/textures/player1.png", "Player");
-	}
-	else
-	{
-		loadTexture("../Assets/textures/player2.png", "Player");
-	}
-	loadTexture("../Assets/textures/background.png", "map");
+	loadTexture("../Assets/textures/Player.png", "Player");
+	loadTexture("../Assets/textures/Background.png", "map");
 	loadTexture("../Assets/textures/Fan.png", "Fan");
 }
 

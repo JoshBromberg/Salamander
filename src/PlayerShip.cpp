@@ -15,7 +15,6 @@ PlayerShip::PlayerShip(int health, int lives, glm::vec2 targetTransform)
 :m_isMoving(false), m_maxSpeed(5.0f), m_alpha(255),name("Player"),inv(false),killCounter(0),shieldAvailable(false)
 {
 	changeTexture("Player");
-	//changeTexture("Player");
 	setPosition(targetTransform);
 	setIsColliding(false);
 	setType(GameObjectType::PLAYER);
@@ -23,37 +22,14 @@ PlayerShip::PlayerShip(int health, int lives, glm::vec2 targetTransform)
 	std::vector<ShipComponent> build =
 #pragma region Frame Construction
 	{
-		/*Blank(), Blank(),Blank(),Blank(),Blank(),Blank(),Blank(),Blank(),BasicBody(), Blank(),Blank(),Blank(),Blank(),Blank(),Blank(),
-		BasicBody(), Blank(),Blank(),Blank(),Blank(),Blank(),Blank(),Blank(),BasicBody(),Blank(),Blank(),Blank(),Blank(),Blank(),Blank(),
-		BasicBody(), BasicBody(), Blank(),Blank(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),MissileLauncher(),Blank(),Blank(),
-		BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),Blank(),
-		BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),MissileLauncher(),
-		Blank(), BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),
-		Blank(),Blank(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),Blank(),
-		Blank(),Blank(),Blank(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),MissileLauncher(),Blank(),Blank(),
-		Blank(),Blank(),Blank(),Blank(),Blank(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),Blank(),Blank(),Blank(),Blank(),Blank(),
-		Blank(),Blank(),Blank(),Blank(),Blank(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),BasicBody(),Blank(),Blank(),Blank(),Blank(),Blank()*/
-		BasicBody(),BasicBody(),MissileLauncher(),
-		BasicBody(),BasicBody(), MissileLauncher(),
-		BasicBody(), BasicBody(), MissileLauncher()
+		BasicBody()
 	};
 #pragma endregion
-	frame = new Frame(30, //Player Collider is 90px by 90px
-		build, 3, 3);
+	frame = new Frame(1, //Player Collider is 1px by 1px
+		build, 1, 1);
 	frame->Initialize(this);
 	playerLives = lives;
 	playerHealth = health;
-	//SDL_SetTextureColorMod(TextureManager::Instance()->getTexture("Player"), 255, 255, 255);
-	//SDL_SetTextureColorMod(TextureManager::Instance()->getTexture("Player"), 255, 51, 100);
-	//std::cout << "PlayerHealth: " << playerHealth << std::endl;
-	//std::cout << "Player Lives: " << playerLives << std::endl;
-	//std::cout << "PlayerShip is instantiated!" << std::endl;
-	//std::cout <<"Player:s memory address: "<< this << std::endl;
-	//std::cout << "Frame's memory address: " << frame << std::endl;
-	//std::cout << "frame's parent(Player): " << frame->getParent() << std::endl;
-	//std::cout << "The first element's name: " << frame->GetBuild().begin()->getName() << std::endl;
-	//std::cout << "The element's parent(Player's frame): " << frame->GetBuild().begin()->getParent() << std::endl;
-	//std::cout << "The first element's parent's parent(should be player): "<< frame->GetBuild().begin()->getParent()->getParent() << std::endl;
 }
 
 PlayerShip::~PlayerShip()

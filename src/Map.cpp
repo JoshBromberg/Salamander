@@ -43,7 +43,7 @@ void Map::_move()
 
 void Map::_checkBounds()
 {
-	if (getPosition().x <= -1950)
+	if (getPosition().x <= -1280)
 	{
 		_reset();
 	}
@@ -51,5 +51,5 @@ void Map::_checkBounds()
 
 void Map::_reset()
 {
-	setPosition(glm::vec2(1960, 0));
+	setPosition(glm::vec2(1280, 0));
 }
