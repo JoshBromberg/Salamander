@@ -35,6 +35,27 @@ Level1::Level1()
 		c, c, c, c, c,
 		c, c, c, c, c
 	};
+	deathHandSpawnTimer = {
+		
+		1,//1860, //top
+		2880, //bot
+		2940, //top
+		3240, //bot
+		3241, //top
+		4380, //bot
+		7740, //bot mid
+		7800 //top mid
+	};
+	deathHandSpawnLocation = {
+		{Config::SCREEN_WIDTH +20, -d},
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
+		{Config::SCREEN_WIDTH +20, -d},
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
+		{Config::SCREEN_WIDTH +20, -d},
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT/2 + d + 40},
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT / 2 - d - 40}
+	};
 
 	
 	player = new PlayerShip(1, 5, glm::vec2(100, Config::SCREEN_HEIGHT / 2));
@@ -78,6 +99,7 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/Player.png", "Player");
 	loadTexture("../Assets/textures/Background.png", "map");
 	loadTexture("../Assets/textures/Fan.png", "Fan");
+	loadTexture("../Assets/textures/DeathHand.png", "DeathHand");
 }
 
 void Level1::loadAllSounds()

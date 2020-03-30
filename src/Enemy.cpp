@@ -72,10 +72,10 @@ void Enemy::Move()
 {
 	setPosition(getPosition() + aI->GetSpeed());
 	if (health <=1 && (
-		(getPosition().x + ((GetFrame()->GridWidth() * GetFrame()->getGridSize()) / 2) <= -120) ||
+		(getPosition().x + ((GetFrame()->GridWidth() * GetFrame()->getGridSize()) / 2) <= -180) ||
 		(getPosition().x >= Config::SCREEN_WIDTH*1.5) ||
-		(getPosition().y + ((GetFrame()->GridHeight() * GetFrame()->getGridSize()) / 2) <= -120) ||
-		(getPosition().y - ((GetFrame()->GridHeight() * GetFrame()->getGridSize()) / 2) >= Config::SCREEN_HEIGHT+120)
+		(getPosition().y + ((GetFrame()->GridHeight() * GetFrame()->getGridSize()) / 2) <= -180) ||
+		(getPosition().y - ((GetFrame()->GridHeight() * GetFrame()->getGridSize()) / 2) >= Config::SCREEN_HEIGHT+180)
 		)) {
 		TheGame::Instance()->destroyEnemy(this);
 	}
@@ -83,14 +83,13 @@ void Enemy::Move()
 
 void Enemy::draw()
 {
-	std::string s = hitTimer > 0 ? name + "Hit" : name;
-	if (name == "Cannonlord" || name == "Chaos") {
-		double d = name == "Cannonlord" ? ((CannonlordAI*)aI)->getRotation() : ((ChaosAI*)aI)->getRotation();
-		TheTextureManager::Instance()->draw(s, getPosition().x - (frame->getGridSize() * frame->GridWidth() / 2), getPosition().y - (frame->getGridSize() * frame->GridHeight() / 2), frame->getGridSize() * frame->GridWidth(), frame->getGridSize() * frame->GridHeight(),
-			TheGame::Instance()->getRenderer(), d, 255, SDL_FLIP_NONE);
+	//std::string s = hitTimer > 0 ? name + "Hit" : name;
+	if (((FlyOntoScreenAI*)aI)->getRotation() > 0 || ((FlyOntoScreenAI*)aI)->getRotation() < 0) {
+		TheTextureManager::Instance()->draw(name, getPosition().x - (frame->getGridSize() * frame->GridWidth() / 2), getPosition().y - (frame->getGridSize() * frame->GridHeight() / 2), frame->getGridSize() * frame->GridWidth(), frame->getGridSize() * frame->GridHeight(),
+			TheGame::Instance()->getRenderer(), ((FlyOntoScreenAI*)aI)->getRotation(), 255, SDL_FLIP_NONE);
 	}
 	else {
-		TheTextureManager::Instance()->draw(s, getPosition().x-(frame->getGridSize()*frame->GridWidth()/2), getPosition().y - (frame->getGridSize() * frame->GridHeight() / 2), frame->getGridSize() * frame->GridWidth(), frame->getGridSize() * frame->GridHeight(),
+		TheTextureManager::Instance()->draw(name, getPosition().x-(frame->getGridSize()*frame->GridWidth()/2), getPosition().y - (frame->getGridSize() * frame->GridHeight() / 2), frame->getGridSize() * frame->GridWidth(), frame->getGridSize() * frame->GridHeight(),
 			TheGame::Instance()->getRenderer());
 	}
 	//std::cout << name << std::endl;

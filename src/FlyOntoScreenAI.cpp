@@ -35,3 +35,8 @@ bool FlyOntoScreenAI::isAtTarget()
 {
 	return atTarget;
 }
+
+int FlyOntoScreenAI::getRotation()
+{
+	return rotation;
+}

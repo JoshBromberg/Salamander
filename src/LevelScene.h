@@ -51,9 +51,9 @@ protected:
 	Map* m_pMap2;
 	#pragma endregion
 	#pragma region Spawn Timers
-	int time = 0, fanIteration = 0;
-	std::vector<int> fanSpawnTimer;
-	std::vector<glm::vec2> fanSpawnLocation;
+	int time = 0, fanIteration = 0, deathHandIteration = 0;
+	std::vector<int> fanSpawnTimer, deathHandSpawnTimer;
+	std::vector<glm::vec2> fanSpawnLocation, deathHandSpawnLocation;
 	#pragma endregion
 
 	int level;

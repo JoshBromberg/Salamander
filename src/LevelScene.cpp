@@ -1,5 +1,6 @@
 #include "LevelScene.h"
 #include "FanAI.h"
+#include "DeathHandAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -93,6 +94,13 @@ void LevelScene::update()
 		{
 			spawnEnemy(new FanAI(fanSpawnLocation[fanIteration], (fanIteration / 5) % 2 == 0 ? 1 : -1));
 			++fanIteration;
+		}
+	}
+	if (deathHandIteration < deathHandSpawnTimer.size()) {
+		if (time == deathHandSpawnTimer[deathHandIteration])
+		{
+			spawnEnemy(new DeathHandAI(deathHandSpawnLocation[deathHandIteration], deathHandSpawnLocation[deathHandIteration].y < Config::SCREEN_HEIGHT/2 ? 180 : 0));
+			++deathHandIteration;
 		}
 	}
 	#pragma endregion

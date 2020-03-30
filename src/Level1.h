@@ -17,5 +17,6 @@ public:
 	void loadAllSounds();
 private:
 	glm::vec2 c = { 1380, 360 };
+	int d = 160;
 };
 #endif /* defined __LEVEL1__ */
