@@ -24,3 +24,8 @@ int AI::getScore()
 {
 	return score;
 }
+
+bool AI::CircleCollider()
+{
+	return circle;
+}

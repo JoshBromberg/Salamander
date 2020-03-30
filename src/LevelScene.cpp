@@ -1,11 +1,5 @@
 #include "LevelScene.h"
-#include "RamAI.h"
-#include "ZigzagAI.h"
-#include "CannoneerAI.h"
-#include "GuardianAI.h"
-#include "DiagonAI.h"
-#include "BlastAI.h"
-#include "IslandAI.h"
+#include "FanAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -94,53 +88,11 @@ void LevelScene::update()
 	#pragma endregion
 	
 	#pragma region Spawn Enemies
-	if (ramIteration < ramSpawnTimer.size()) {
-		if (time == ramSpawnTimer[ramIteration])
+	if (fanIteration < fanSpawnTimer.size()) {
+		if (time == fanSpawnTimer[fanIteration])
 		{
-			spawnEnemy(new RamAI(ramSpawnLocation[ramIteration]));
-			++ramIteration;
-		}
-	}
-	if (zigzagIteration < zigzagSpawnTimer.size()) {
-		if (time == zigzagSpawnTimer[zigzagIteration])
-		{
-			spawnEnemy(new ZigzagAI(zigzagSpawnLocation[zigzagIteration]));
-			++zigzagIteration;
-		}
-	}
-	if (cannoneerIteration < cannoneerSpawnTimer.size()) {
-		if (time == cannoneerSpawnTimer[cannoneerIteration])
-		{
-			spawnEnemy(new CannoneerAI(cannoneerSpawnLocation[cannoneerIteration]));
-			++cannoneerIteration;
-		}
-	}
-	if (guardianIteration < guardianSpawnTimer.size()) {
-		if (time == guardianSpawnTimer[guardianIteration])
-		{
-			spawnEnemy(new GuardianAI(guardianSpawnLocation[guardianIteration]));
-			++guardianIteration;
-		}
-	}
-	if (diagonIteration < diagonSpawnTimer.size()) {
-		if (time == diagonSpawnTimer[diagonIteration])
-		{
-			spawnEnemy(new DiagonAI(diagonSpawnLocation[diagonIteration]));
-			++diagonIteration;
-		}
-	}
-	if (blastIteration < blastSpawnTimer.size()) {
-		if (time == blastSpawnTimer[blastIteration])
-		{
-			spawnEnemy(new BlastAI(blastSpawnLocation[blastIteration]));
-			++blastIteration;
-		}
-	}
-	if (islandIteration < islandSpawnTimer.size()) {
-		if (time == islandSpawnTimer[islandIteration])
-		{
-			spawnEnemy(new IslandAI(islandSpawnLocation[islandIteration]));
-			++islandIteration;
+			spawnEnemy(new FanAI(fanSpawnLocation[fanIteration], fanIteration % 2 == 0 ? 1 : -1));
+			++fanIteration;
 		}
 	}
 	#pragma endregion
@@ -168,10 +120,6 @@ void LevelScene::draw()
 	if (m_pMap2 != nullptr)
 	{
 		m_pMap2->draw();
-	}
-	if (m_pControl_Img != nullptr)
-	{
-		m_pControl_Img->draw();
 	}
 	if (player->getPlayerLives() >= 0)
 	{
@@ -300,17 +248,23 @@ void LevelScene::collisionCheck(bool boss, AI* enemy, PlayerWeapon* pw)
 			}
 		}
 	}
+	else if (enemy->CircleCollider()) {
+		if (CollisionManager::circleAABBCheck(enemy->GetParent(), pw) && enemy->GetParent()->getType() != ENEMY_WEAPON)
+		{
+			enemy->GetParent()->Damage(1);
+			pw->Damage(1);
+		}
+		if (player->getKillCounter() > 0 &&
+			player->getKillCounter() % 20 == 0)
+		{
+			spawnShield(enemy);
+		}
+	}
 	else {
 		if (CollisionManager::AABBCheck(enemy->GetParent(), pw) && enemy->GetParent()->getType() != ENEMY_WEAPON)
 		{
 			enemy->GetParent()->Damage(1);
-			//std::cout << "Enemy name: " <<enemy->GetParent()->getName()<<
-				//"\nenemy health: (should be 0)"<<enemy->GetParent()->getHealth() << std::endl;
 			pw->Damage(1);
-			//Temporary calling score method for testing.
-			//player->addScore(/*some amount for score(integer)*/);
-			//player->setKillCounter(1);
-			//player->addScore(player->getKillCounter());
 		}
 		if (player->getKillCounter() > 0 &&
 			player->getKillCounter() % 20 == 0)
@@ -415,13 +369,13 @@ void LevelScene::initialize()
 	{
 		std::cout << "Initialized.\n";
 		SDL_Color yellow = { 255, 255, 0, 255 };
-		m_pLivesLabel = new Label("Lives: " + std::to_string(Scoreboard::Instance()->getLives()), "Consolas",
+		m_pLivesLabel = new Label("Lives: " + std::to_string(Scoreboard::Instance()->getLives()), "FSEX300",
 			24, yellow, glm::vec2(Config::SCREEN_WIDTH * 0.75f, 10.0f), TTF_STYLE_NORMAL, true);
 		/*m_pSpeedLabel = new Label("Speed: " + std::to_string(player->getPlayerSpeed()), "Consolas",
 			24, yellow, glm::vec2(Config::SCREEN_WIDTH * 0.65f, 10.0f), TTF_STYLE_NORMAL, false);*/
-		m_pScoreLabel = new Label("Score: " + std::to_string(Scoreboard::Instance()->getScore()), "Consolas",
+		m_pScoreLabel = new Label("Score: " + std::to_string(Scoreboard::Instance()->getScore()), "FSEX300",
 			24, yellow, glm::vec2(Config::SCREEN_WIDTH * 0.25f, 10.0f), TTF_STYLE_NORMAL,true);
-		m_pHighScoreLabel = new Label("HighScore: " + std::to_string(Scoreboard::Instance()->getHighScore()), "Consolas",
+		m_pHighScoreLabel = new Label("HighScore: " + std::to_string(Scoreboard::Instance()->getHighScore()), "FSEX300",
 			24, yellow, glm::vec2(Config::SCREEN_WIDTH * 0.5f, 10.0f), TTF_STYLE_NORMAL, true);
 
 		

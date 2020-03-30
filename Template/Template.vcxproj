@@ -168,13 +168,13 @@
     <ClCompile Include="..\src\EnemyFlamethrowerAI.cpp" />
     <ClCompile Include="..\src\Entry_Bg.cpp" />
     <ClCompile Include="..\src\explosion.cpp" />
+    <ClCompile Include="..\src\FanAI.cpp" />
     <ClCompile Include="..\src\Flamethrower.cpp" />
     <ClCompile Include="..\src\FlameThrowerWeapon.cpp" />
     <ClCompile Include="..\src\Game_Over_Bg.cpp" />
     <ClCompile Include="..\src\GuardianAI.cpp" />
     <ClCompile Include="..\src\IslandAI.cpp" />
     <ClCompile Include="..\src\Level1.cpp" />
-    <ClCompile Include="..\src\Level2.cpp" />
     <ClCompile Include="..\src\Map.cpp" />
     <ClCompile Include="..\src\MissileLauncher.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
@@ -200,7 +200,6 @@
     <ClCompile Include="..\src\FireBargeAI.cpp" />
     <ClCompile Include="..\src\FirebrandAI.cpp" />
     <ClCompile Include="..\src\FlyOntoScreenAI.cpp" />
-    <ClCompile Include="..\src\Level3.cpp" />
     <ClCompile Include="..\src\LevelScene.cpp" />
     <ClCompile Include="..\src\MissileBargeAI.cpp" />
     <ClCompile Include="..\src\PlayerLockAI.cpp" />
@@ -244,6 +243,7 @@
     <ClInclude Include="..\src\EnemyFlamethrowerAI.h" />
     <ClInclude Include="..\src\Entry_Bg.h" />
     <ClInclude Include="..\src\explosion.h" />
+    <ClInclude Include="..\src\FanAI.h" />
     <ClInclude Include="..\src\Flamethrower.h" />
     <ClInclude Include="..\src\FlameThrowerWeapon.h" />
     <ClInclude Include="..\src\GameObjectType.h" />
@@ -251,7 +251,6 @@
     <ClInclude Include="..\src\GuardianAI.h" />
     <ClInclude Include="..\src\IslandAI.h" />
     <ClInclude Include="..\src\Level1.h" />
-    <ClInclude Include="..\src\Level2.h" />
     <ClInclude Include="..\src\Map.h" />
     <ClInclude Include="..\src\MissileLauncher.h" />
     <ClInclude Include="..\src\Move.h" />
@@ -281,7 +280,6 @@
     <ClInclude Include="..\src\FireBargeAI.h" />
     <ClInclude Include="..\src\FirebrandAI.h" />
     <ClInclude Include="..\src\FlyOntoScreenAI.h" />
-    <ClInclude Include="..\src\Level3.h" />
     <ClInclude Include="..\src\LevelScene.h" />
     <ClInclude Include="..\src\MissileBargeAI.h" />
     <ClInclude Include="..\src\PlayerLockAI.h" />

@@ -34,12 +34,12 @@ Enemy::~Enemy()
 void Enemy::Damage(int i)
 {
 	bool doDamage = true;
-	if (((FlyOntoScreenAI*)aI)->isBoss){
+	/*if (((FlyOntoScreenAI*)aI)->isBoss){
 		if (!((FlyOntoScreenAI*)aI)->isAtTarget()) {
 			doDamage = false;
 		}
 	}
-	else if (((ChaosAI*)aI)->getFire()) {
+	else */if (((ChaosAI*)aI)->getFire()) {
 		doDamage = false;
 	}
 	if (doDamage && hitTimer <= 0) {

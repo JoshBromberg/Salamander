@@ -41,7 +41,6 @@ protected:
 	Label* m_pScoreLabel;
 	Label* m_pHighScoreLabel;
 
-	Control_Img* m_pControl_Img = new Control_Img();
 	std::vector<PlayerWeapon*> playerWeapons;
 	std::vector<Shield*> m_pshields;
 	std::vector<Power_Up*> power_ups;
@@ -52,9 +51,9 @@ protected:
 	Map* m_pMap2;
 	#pragma endregion
 	#pragma region Spawn Timers
-	int time = 0, ramIteration = 0, zigzagIteration = 0, cannoneerIteration = 0, guardianIteration = 0, diagonIteration = 0, blastIteration = 0, islandIteration = 0;
-	std::vector<int> ramSpawnTimer, zigzagSpawnTimer, cannoneerSpawnTimer, guardianSpawnTimer, diagonSpawnTimer, blastSpawnTimer, islandSpawnTimer;
-	std::vector<glm::vec2> ramSpawnLocation, zigzagSpawnLocation, cannoneerSpawnLocation, guardianSpawnLocation, diagonSpawnLocation, blastSpawnLocation, islandSpawnLocation;
+	int time = 0, fanIteration = 0;
+	std::vector<int> fanSpawnTimer;
+	std::vector<glm::vec2> fanSpawnLocation;
 	#pragma endregion
 
 	int level;

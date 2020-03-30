@@ -4,13 +4,10 @@
 #include <algorithm>
 #include <iomanip>
 #include "PlayerShip.h"
-#include "LevelScene.h"
 #include "AI.h"
 #include "Level1.h"
-#include "Level3.h"
 #include "Weapon.h"
 #include "FlameThrower.h"
-#include "Level2.h"
 
 
 Game* Game::s_pInstance = 0;
@@ -156,17 +153,6 @@ void Game::changeSceneState(SceneState newState)
 		case SceneState::LEVEL1_SCENE:
 			m_currentScene = new Level1();
 			std::cout << "play scene activated" << std::endl;
-			break;
-		case SceneState::LEVEL2_SCENE:
-			//PlayerShip* player = getPlayerShip();
-			//m_currentScene = new Level2(player);
-			m_currentScene = new Level2();
-			std::cout << "level 2 activated" << std::endl;
-			break;
-		case SceneState::LEVEL3_SCENE:
-			PlayerShip* player = getPlayerShip();
-			m_currentScene = new Level3(player);
-			std::cout << "boss rush activated" << std::endl;
 			break;
 		}
 		
@@ -433,10 +419,6 @@ void Game::handleEvents()
 			default:
 				break;
 				// The below code throws a Debug Assertion Failed Error
-			case SDLK_f:
-				((Level3*)m_currentScene)->CheatCode(); //WARNING: For testing Level 3 only! Remove this when testing ends!
-				//getPlayerShip()->GetFrame().GetWeapon(0).Fire();
-				break;
 			/*case SDLK_z:
 				if (getPlayerShip()->getPlayerLives() >= 0)
 				{

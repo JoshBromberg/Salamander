@@ -10,9 +10,11 @@ public:
 	virtual glm::vec2 GetSpeed();
 	Enemy* GetParent();
 	int getScore();
+	bool CircleCollider();
 protected:
 	Enemy* parent;
 	glm::vec2 speed;
 	int score;
+	bool circle = false;
 };
 #endif

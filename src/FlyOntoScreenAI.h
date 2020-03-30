@@ -15,7 +15,6 @@ public:
 protected:
 	glm::vec2 target;
 	glm::vec2 entrySpeed = glm::vec2 (-5, 0);
-private:
 	bool atTarget = false;
 };
 
