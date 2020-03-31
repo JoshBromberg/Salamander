@@ -26,6 +26,7 @@ DeathHandAI::DeathHandAI(glm::vec2 transform, int i)
 	target = glm::vec2(Config::SCREEN_WIDTH, i == 180 ? 0 : Config::SCREEN_HEIGHT);
 	score = 6000;
 	isBoss = false;
+	if (i == 0) { i = 360; }
 	rotation = i;
 	speed.x = -5;
 }
@@ -39,9 +40,10 @@ void DeathHandAI::SecondaryFunction()
 	float tX = TheGame::Instance()->getPlayerPosition().x;
 	float tY = TheGame::Instance()->getPlayerPosition().y;
 	float xDif = abs(GetParent()->getPosition().x - tX), yDif = abs(GetParent()->getPosition().y - tY);
-	angle =  xDif > yDif ? acos(yDif / xDif) : acos(yDif / xDif);
-	std::cout << yDif << std::endl;
-	//these numbers will be wrong
+	double a =  xDif > yDif ? yDif / xDif : xDif / yDif;
+	a = xDif > yDif ? acos(a) * 180 / M_PI : asin(a) * 180 / M_PI;
+	a = GetParent()->getPosition().x > tX ? a : -a;
+	angle = GetParent()->getPosition().y <= Config::SCREEN_HEIGHT / 2 ? 180 + a: 360 - a;
 	if (rotation > angle) {
 		--rotation;
 	}

@@ -38,7 +38,7 @@ Level1::Level1()
 	deathHandSpawnTimer = {
 		
 		1,//1860, //top
-		2880, //bot
+		2,//2880, //bot
 		2940, //top
 		3240, //bot
 		3241, //top
@@ -100,6 +100,7 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/Background.png", "map");
 	loadTexture("../Assets/textures/Fan.png", "Fan");
 	loadTexture("../Assets/textures/DeathHand.png", "DeathHand");
+	loadTexture("../Assets/textures/Octa.png", "Octa");
 }
 
 void Level1::loadAllSounds()
