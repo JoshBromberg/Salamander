@@ -3,6 +3,7 @@
 #include "DeathHandAI.h"
 #include "OctaAI.h"
 #include "SharpCrossAI.h"
+#include "SparugAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -117,6 +118,13 @@ void LevelScene::update()
 		{
 			spawnEnemy(new SharpCrossAI(sharpCrossSpawnLocation[sharpCrossIteration]));
 			++sharpCrossIteration;
+		}
+	}
+	if (sparugIteration < sparugSpawnTimer.size()) {
+		if (time == sparugSpawnTimer[sparugIteration])
+		{
+			spawnEnemy(new SparugAI(sparugSpawnLocation[sparugIteration]));
+			++sparugIteration;
 		}
 	}
 	#pragma endregion

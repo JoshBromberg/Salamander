@@ -276,6 +276,9 @@
     <ClCompile Include="..\src\SharpCrossAI.cpp">
       <Filter>Source Files\AIs</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\SparugAI.cpp">
+      <Filter>Source Files\AIs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -516,6 +519,9 @@
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SharpCrossAI.h">
+      <Filter>Header Files\AIs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SparugAI.h">
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
   </ItemGroup>

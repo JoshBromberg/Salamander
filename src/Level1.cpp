@@ -100,6 +100,38 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
 		{Config::SCREEN_WIDTH + 48, -144}
 	};
+	sparugSpawnTimer = {
+		1,//3900, //top middle
+		3901, //bottom middle
+		3960, //top middle
+		3961, //bottom middle
+		7980, //top
+		7981, //bottom
+		8040, //top
+		8041, //bottom
+		8100, //top
+		8101, //bottom
+		8580, //top
+		8581, //bottom
+		8600, //top
+		8601, //bottom
+	};
+	sparugSpawnLocation = {
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 - 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 + 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 - 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 + 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+	};
 	
 	player = new PlayerShip(1, 5, glm::vec2(100, Config::SCREEN_HEIGHT / 2));
 	m_pMap = new Map();
@@ -146,6 +178,8 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/Octa.png", "Octa");
 	loadTexture("../Assets/textures/SharpCross.png", "SharpCross");
 	loadTexture("../Assets/textures/SharpCross2.png", "SharpCross2");
+	loadTexture("../Assets/textures/Sparug.png", "Sparug");
+	loadTexture("../Assets/textures/EnemyMissile.png", "EnemyMissile");
 }
 
 void Level1::loadAllSounds()
