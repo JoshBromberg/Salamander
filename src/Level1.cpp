@@ -101,7 +101,7 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 48, -144}
 	};
 	sparugSpawnTimer = {
-		1,//3900, //top middle
+		3900, //top middle
 		3901, //bottom middle
 		3960, //top middle
 		3961, //bottom middle
