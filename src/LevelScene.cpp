@@ -2,6 +2,7 @@
 #include "FanAI.h"
 #include "DeathHandAI.h"
 #include "OctaAI.h"
+#include "SharpCrossAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -109,6 +110,13 @@ void LevelScene::update()
 		{
 			spawnEnemy(new OctaAI(octaSpawnLocation[octaIteration]));
 			++octaIteration;
+		}
+	}
+	if (sharpCrossIteration < sharpCrossSpawnTimer.size()) {
+		if (time == sharpCrossSpawnTimer[sharpCrossIteration])
+		{
+			spawnEnemy(new SharpCrossAI(sharpCrossSpawnLocation[sharpCrossIteration]));
+			++sharpCrossIteration;
 		}
 	}
 	#pragma endregion

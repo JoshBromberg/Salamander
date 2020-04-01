@@ -84,6 +84,22 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
 		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3} //top mid
 	};
+	sharpCrossSpawnTimer = {
+		4980, //top
+		5040, //bot
+		5100, //top
+		5101, //bot
+		5160, //bot
+		5220 //top
+	};
+	sharpCrossSpawnLocation = {
+		{Config::SCREEN_WIDTH + 48, -144},
+		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
+		{Config::SCREEN_WIDTH + 48, -144},
+		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
+		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
+		{Config::SCREEN_WIDTH + 48, -144}
+	};
 	
 	player = new PlayerShip(1, 5, glm::vec2(100, Config::SCREEN_HEIGHT / 2));
 	m_pMap = new Map();
@@ -128,6 +144,8 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/Fan.png", "Fan");
 	loadTexture("../Assets/textures/DeathHand.png", "DeathHand");
 	loadTexture("../Assets/textures/Octa.png", "Octa");
+	loadTexture("../Assets/textures/SharpCross.png", "SharpCross");
+	loadTexture("../Assets/textures/SharpCross2.png", "SharpCross2");
 }
 
 void Level1::loadAllSounds()

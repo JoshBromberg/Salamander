@@ -84,7 +84,7 @@ void Enemy::Move()
 void Enemy::draw()
 {
 	//std::string s = hitTimer > 0 ? name + "Hit" : name;
-	if (((FlyOntoScreenAI*)aI)->getRotation() > 0 || ((FlyOntoScreenAI*)aI)->getRotation() < 0) {
+	if (aI->HasRotation()) {
 		TheTextureManager::Instance()->draw(name, getPosition().x - (frame->getGridSize() * frame->GridWidth() / 2), getPosition().y - (frame->getGridSize() * frame->GridHeight() / 2), frame->getGridSize() * frame->GridWidth(), frame->getGridSize() * frame->GridHeight(),
 			TheGame::Instance()->getRenderer(), ((FlyOntoScreenAI*)aI)->getRotation(), 255, SDL_FLIP_NONE);
 	}
