@@ -28,6 +28,7 @@ DeathHandAI::DeathHandAI(glm::vec2 transform, int i)
 	isBoss = false;
 	if (i == 0) { i = 360; }
 	rotation = i;
+	hasRotation = true;
 	speed.x = -5;
 }
 

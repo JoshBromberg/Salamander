@@ -270,6 +270,9 @@
     <ClCompile Include="..\src\DeathHandAI.cpp">
       <Filter>Source Files\AIs</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\OctaAI.cpp">
+      <Filter>Source Files\AIs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -504,6 +507,9 @@
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\DeathHandAI.h">
+      <Filter>Header Files\AIs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OctaAI.h">
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
   </ItemGroup>

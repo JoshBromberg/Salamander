@@ -1,6 +1,7 @@
 #include "LevelScene.h"
 #include "FanAI.h"
 #include "DeathHandAI.h"
+#include "OctaAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -101,6 +102,13 @@ void LevelScene::update()
 		{
 			spawnEnemy(new DeathHandAI(deathHandSpawnLocation[deathHandIteration], deathHandSpawnLocation[deathHandIteration].y < Config::SCREEN_HEIGHT/2 ? 180 : 0));
 			++deathHandIteration;
+		}
+	}
+	if (octaIteration < octaSpawnTimer.size()) {
+		if (time == octaSpawnTimer[octaIteration])
+		{
+			spawnEnemy(new OctaAI(octaSpawnLocation[octaIteration]));
+			++octaIteration;
 		}
 	}
 	#pragma endregion

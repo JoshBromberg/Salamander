@@ -29,3 +29,8 @@ bool AI::CircleCollider()
 {
 	return circle;
 }
+
+bool AI::HasRotation()
+{
+	return hasRotation;
+}

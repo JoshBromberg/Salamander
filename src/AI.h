@@ -11,10 +11,11 @@ public:
 	Enemy* GetParent();
 	int getScore();
 	bool CircleCollider();
+	bool HasRotation();
 protected:
 	Enemy* parent;
 	glm::vec2 speed;
 	int score;
-	bool circle = false;
+	bool circle = false, hasRotation = false;
 };
 #endif

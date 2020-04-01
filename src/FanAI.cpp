@@ -9,7 +9,7 @@ FanAI::FanAI(glm::vec2 transform, int i)
 			BasicBody()
 	};
 #pragma endregion
-	parent = new Enemy(new Frame(80, //Enemy is 80px by 80px
+	parent = new Enemy(new Frame(40, //Enemy is 80px by 80px
 		build, 1, 1), 1,
 		this, transform, "Fan");
 	target = glm::vec2(Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT/2);

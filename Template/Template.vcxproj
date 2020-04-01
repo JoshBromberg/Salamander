@@ -178,6 +178,7 @@
     <ClCompile Include="..\src\Level1.cpp" />
     <ClCompile Include="..\src\Map.cpp" />
     <ClCompile Include="..\src\MissileLauncher.cpp" />
+    <ClCompile Include="..\src\OctaAI.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
     <ClCompile Include="..\src\PlayerEntry.cpp" />
     <ClCompile Include="..\src\PlayerShip.cpp" />
@@ -256,6 +257,7 @@
     <ClInclude Include="..\src\Map.h" />
     <ClInclude Include="..\src\MissileLauncher.h" />
     <ClInclude Include="..\src\Move.h" />
+    <ClInclude Include="..\src\OctaAI.h" />
     <ClInclude Include="..\src\Player.h" />
     <ClInclude Include="..\src\PlayerEntry.h" />
     <ClInclude Include="..\src\PlayerShip.h" />

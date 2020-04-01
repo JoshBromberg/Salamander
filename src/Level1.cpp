@@ -12,16 +12,16 @@ Level1::Level1()
 	loadAllSounds();
 	
 	fanSpawnTimer = {
-		180, 195, 210, 225, 240,
-		300, 315, 330, 345, 360,
-		420, 435, 450, 465, 480,
-		540, 555, 570, 585, 600,
-		660, 675, 690, 705, 720,
-		780, 795, 810, 825, 840,
-		900, 915, 930, 945, 960,
-		1020, 1035, 1050, 1065, 1080,
-		1140, 1155, 1170, 1185, 1200,
-		1260, 1275, 1290, 1305, 1320
+		180, 190, 200, 210, 220,
+		300, 310, 320, 330, 340,
+		420, 430, 440, 450, 460,
+		540, 550, 560, 570, 580,
+		660, 670, 680, 690, 700,
+		780, 790, 800, 810, 820,
+		900, 910, 920, 930, 940,
+		1020, 1030, 1040, 1050, 1060,
+		1140, 1150, 1160, 1170, 1180,
+		1260, 1270, 1280, 1290, 1300
 	};
 	fanSpawnLocation = {
 		c, c, c, c, c,
@@ -37,8 +37,8 @@ Level1::Level1()
 	};
 	deathHandSpawnTimer = {
 		
-		1,//1860, //top
-		2,//2880, //bot
+		1860, //top
+		2880, //bot
 		2940, //top
 		3240, //bot
 		3241, //top
@@ -56,7 +56,34 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT/2 + d + 40},
 		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT / 2 - d - 40}
 	};
-
+	octaSpawnTimer = {
+		2400,
+		2820,
+		3120,
+		3121,
+		3360,
+		3361,
+		5640,
+		5641,
+		7080,
+		7081,
+		8160,
+		8161
+	};
+	octaSpawnLocation = {
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3}, //top mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3}, //top mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3}, //top mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3}, //top mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3}, //top mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
+		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3} //top mid
+	};
 	
 	player = new PlayerShip(1, 5, glm::vec2(100, Config::SCREEN_HEIGHT / 2));
 	m_pMap = new Map();
