@@ -105,7 +105,7 @@ Level1::Level1()
 		3901, //bottom middle
 		3960, //top middle
 		3961, //bottom middle
-		7980, //top
+		7980, //top			AROUND HERE they start spawning at the wrong times
 		7981, //bottom
 		8040, //top
 		8041, //bottom
@@ -151,7 +151,25 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 210, 20},{Config::SCREEN_WIDTH + 205, 60},{Config::SCREEN_WIDTH + 200, 100},{Config::SCREEN_WIDTH + 195, 140},{Config::SCREEN_WIDTH + 190, 180},
 		{Config::SCREEN_WIDTH + 190, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 180, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 175, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 170, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 165, Config::SCREEN_HEIGHT - 180},
 	};
-	
+	for (int i = 270, j = 0, k = 7772; j < 7; ++j, i += 5) {
+		for (int z = 0;z < 7;++z, ++k) {
+			respawningWallSpawnLocation.push_back({ Config::SCREEN_WIDTH + i - z * 5, (Config::SCREEN_HEIGHT / 2 - 100) + (z * 40) });
+			respawningWallTimer.push_back(k);
+		}
+	}
+	for (int i = 600, j = 0, k = 7821; j < 12; ++j, i -= 50) {
+		for (int z = 0;z < 18;++z, ++k) {
+			respawningWallSpawnLocation.push_back({ Config::SCREEN_WIDTH + i - (z * 5), 20 + (z * 40) });
+			respawningWallTimer.push_back(k);
+		}
+	}
+	for (int i = 1100, j = 0, k = 8038; j < 22; ++j, i -= 50) {
+		for (int z = 0;z < 18;++z, ++k) {
+			respawningWallSpawnLocation.push_back({ Config::SCREEN_WIDTH + i - (z * 5), 20 + (z * 40) });
+			respawningWallTimer.push_back(k);
+		}
+	}
+
 	player = new PlayerShip(1, 5, glm::vec2(100, Config::SCREEN_HEIGHT / 2));
 	m_pMap = new Map();
 	m_pMap2 = new Map();

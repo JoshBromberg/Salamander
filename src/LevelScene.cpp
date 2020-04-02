@@ -393,7 +393,7 @@ glm::vec2 LevelScene::getPlayerPosition()
 void LevelScene::spawnEnemy(AI* enemyAI)
 {
 	if (spawnedEnemy == false) {
-		if (!enemyAI->GetParent()->getName().find("Barge")) {
+		if (!enemyAI->GetParent()->getName().find("Wall")) {
 			spawnedEnemy = true;
 		}
 		enemies.push_back(enemyAI);
