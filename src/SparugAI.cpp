@@ -19,6 +19,7 @@ SparugAI::SparugAI(glm::vec2 transform)
 	atTarget = true;
 	rotation = (transform.y >= Config::SCREEN_HEIGHT / 2 || transform.y == Config::SCREEN_HEIGHT / 2 - 30) && transform.y != Config::SCREEN_HEIGHT / 2 + 30 ? 0 : 180;
 	hasRotation = true;
+	isBoss = false;
 }
 
 SparugAI::~SparugAI()

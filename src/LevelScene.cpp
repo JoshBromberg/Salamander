@@ -4,6 +4,7 @@
 #include "OctaAI.h"
 #include "SharpCrossAI.h"
 #include "SparugAI.h"
+#include "RespawningWallAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -127,6 +128,13 @@ void LevelScene::update()
 			++sparugIteration;
 		}
 	}
+	if (respawningWallIteration < respawningWallTimer.size()) {
+		if (time == respawningWallTimer[respawningWallIteration])
+		{
+			spawnEnemy(new RespawningWallAI(respawningWallSpawnLocation[respawningWallIteration]));
+			++respawningWallIteration;
+		}
+	}
 	#pragma endregion
 
 	if(player->getPlayerLives() < 0)
@@ -176,7 +184,9 @@ void LevelScene::draw()
 		pw->draw();
 	}
 	for (AI* a : enemies) {
-		a->GetParent()->draw();
+		if (!(a->GetParent()->getName() == "RespawningWall" && ((RespawningWallAI*)a)->isNotActive())) {
+			a->GetParent()->draw();
+		}
 	}
 	//if(m_pshield != nullptr)
 	//{

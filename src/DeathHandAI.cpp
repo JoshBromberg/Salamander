@@ -25,7 +25,6 @@ DeathHandAI::DeathHandAI(glm::vec2 transform, int i)
 	entrySpeed = { -5, i == 180 ? 10 : -10 };
 	target = glm::vec2(Config::SCREEN_WIDTH, i == 180 ? 0 : Config::SCREEN_HEIGHT);
 	score = 6000;
-	isBoss = false;
 	if (i == 0) { i = 360; }
 	rotation = i;
 	hasRotation = true;

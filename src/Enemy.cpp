@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Game.h"
 #include "FlyOntoScreenAI.h"
+#include "RespawningWallAI.h"
 #include "Frame.h"
 #include "PlayerLockAI.h"
 #include "CannonlordAI.h"
@@ -34,12 +35,10 @@ Enemy::~Enemy()
 void Enemy::Damage(int i)
 {
 	bool doDamage = true;
-	/*if (((FlyOntoScreenAI*)aI)->isBoss){
-		if (!((FlyOntoScreenAI*)aI)->isAtTarget()) {
-			doDamage = false;
-		}
+	if (((RespawningWallAI*)aI)->isActive()){
+		doDamage = false;
 	}
-	else */if (((ChaosAI*)aI)->getFire()) {
+	else if (((ChaosAI*)aI)->getFire()) {
 		doDamage = false;
 	}
 	if (doDamage && hitTimer <= 0) {

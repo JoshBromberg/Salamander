@@ -43,8 +43,8 @@ Level1::Level1()
 		3240, //bot
 		3241, //top
 		4380, //bot
-		7740, //bot mid
-		7800 //top mid
+		7740, //bot mid - has a problem
+		7800 //top mid - has a problem
 	};
 	deathHandSpawnLocation = {
 		{Config::SCREEN_WIDTH +20, -d},
@@ -132,6 +132,25 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 20, 30},
 		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
 	};
+	respawningWallTimer = {
+		7690, 7691, 7692, 7693, 7694, 7695, 7696, 7697, 7698, 7699,
+		7700, 7701, 7702, 7703, 7704, 7705, 7706, 7707, 7708, 7709,
+		7710, 7711, 7712, 7713, 7714, 7715, 7716, 7717, 7718, 7719,
+		7720, 7721, 7722, 7723, 7724, 7725, 7726, 7727, 7728, 7729,
+		7730, 7731, 7732, 7733, 7734, 7735, 7736, 7737, 7738, 7739
+	};
+	respawningWallSpawnLocation = {
+		{Config::SCREEN_WIDTH + 250, 20},{Config::SCREEN_WIDTH + 245, 60},{Config::SCREEN_WIDTH + 240, 100},{Config::SCREEN_WIDTH + 235, 140},{Config::SCREEN_WIDTH + 230, 180},
+		{Config::SCREEN_WIDTH + 225, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 220, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 215, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 210, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 205, Config::SCREEN_HEIGHT - 180},
+		{Config::SCREEN_WIDTH + 240, 20},{Config::SCREEN_WIDTH + 235, 60},{Config::SCREEN_WIDTH + 230, 100},{Config::SCREEN_WIDTH + 225, 140},{Config::SCREEN_WIDTH + 220, 180},
+		{Config::SCREEN_WIDTH + 215, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 210, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 205, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 200, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 195, Config::SCREEN_HEIGHT - 180},
+		{Config::SCREEN_WIDTH + 230, 20},{Config::SCREEN_WIDTH + 225, 60},{Config::SCREEN_WIDTH + 220, 100},{Config::SCREEN_WIDTH + 215, 140},{Config::SCREEN_WIDTH + 210, 180},
+		{Config::SCREEN_WIDTH + 205, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 200, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 195, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 190, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 185, Config::SCREEN_HEIGHT - 180},
+		{Config::SCREEN_WIDTH + 220, 20},{Config::SCREEN_WIDTH + 215, 60},{Config::SCREEN_WIDTH + 210, 100},{Config::SCREEN_WIDTH + 205, 140},{Config::SCREEN_WIDTH + 200, 180},
+		{Config::SCREEN_WIDTH + 195, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 190, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 185, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 180, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 175, Config::SCREEN_HEIGHT - 180},
+		{Config::SCREEN_WIDTH + 210, 20},{Config::SCREEN_WIDTH + 205, 60},{Config::SCREEN_WIDTH + 200, 100},{Config::SCREEN_WIDTH + 195, 140},{Config::SCREEN_WIDTH + 190, 180},
+		{Config::SCREEN_WIDTH + 190, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 180, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 175, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 170, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 165, Config::SCREEN_HEIGHT - 180},
+	};
 	
 	player = new PlayerShip(1, 5, glm::vec2(100, Config::SCREEN_HEIGHT / 2));
 	m_pMap = new Map();
@@ -180,6 +199,8 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/SharpCross2.png", "SharpCross2");
 	loadTexture("../Assets/textures/Sparug.png", "Sparug");
 	loadTexture("../Assets/textures/EnemyMissile.png", "EnemyMissile");
+	loadTexture("../Assets/textures/RespawningWall.png", "RespawningWall");
+	loadTexture("../Assets/textures/Wall.png", "Wall");
 }
 
 void Level1::loadAllSounds()
