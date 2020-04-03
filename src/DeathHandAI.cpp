@@ -23,7 +23,7 @@ DeathHandAI::DeathHandAI(glm::vec2 transform, int i)
 		build, 1, 8), 1,
 		this, transform, "DeathHand");
 	entrySpeed = { -5, i == 180 ? 10 : -10 };
-	target = glm::vec2(Config::SCREEN_WIDTH, i == 180 ? 0 : Config::SCREEN_HEIGHT);
+	target = transform.y > 0 && transform.y <Config::SCREEN_HEIGHT ? glm::vec2(Config::SCREEN_WIDTH, i == 180 ? Config::SCREEN_HEIGHT / 2 - 160 : Config::SCREEN_HEIGHT / 2 + 160) : glm::vec2(Config::SCREEN_WIDTH, i == 180 ? 0 : Config::SCREEN_HEIGHT);
 	score = 6000;
 	if (i == 0) { i = 360; }
 	rotation = i;

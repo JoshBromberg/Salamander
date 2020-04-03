@@ -43,8 +43,8 @@ Level1::Level1()
 		3240, //bot
 		3241, //top
 		4380, //bot
-		7740, //bot mid - has a problem
-		7760 //top mid - has a problem
+		7736, //bot mid
+		7768 //top mid
 	};
 	deathHandSpawnLocation = {
 		{Config::SCREEN_WIDTH +20, -d},
@@ -53,8 +53,8 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
 		{Config::SCREEN_WIDTH +20, -d},
 		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT/2 + d + 40},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT / 2 - d - 40}
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT/2 + d*2},
+		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT / 2 - d*2}
 	};
 	octaSpawnTimer = {
 		2400,
