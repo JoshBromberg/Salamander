@@ -5,6 +5,7 @@
 #include "SharpCrossAI.h"
 #include "SparugAI.h"
 #include "RespawningWallAI.h"
+#include "WallAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -134,6 +135,12 @@ void LevelScene::update()
 			spawnEnemy(new RespawningWallAI(respawningWallSpawnLocation[respawningWallIteration]));
 			++respawningWallIteration;
 		}
+	}
+	if (time >= 1776 && time <= 8600 && time % 48 == 0) {
+		spawnEnemy(new WallAI({Config::SCREEN_WIDTH+120, 20}));
+	}
+	else if (time >= 1777 && time <=8600 && time % 48 == 1) {
+		spawnEnemy(new WallAI({ Config::SCREEN_WIDTH + 120, Config::SCREEN_HEIGHT - 20 }));
 	}
 	#pragma endregion
 

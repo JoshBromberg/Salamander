@@ -44,7 +44,7 @@ Level1::Level1()
 		3241, //top
 		4380, //bot
 		7740, //bot mid - has a problem
-		7800 //top mid - has a problem
+		7760 //top mid - has a problem
 	};
 	deathHandSpawnLocation = {
 		{Config::SCREEN_WIDTH +20, -d},
@@ -105,16 +105,16 @@ Level1::Level1()
 		3901, //bottom middle
 		3960, //top middle
 		3961, //bottom middle
-		7980, //top			AROUND HERE they start spawning at the wrong times
-		7981, //bottom
-		8040, //top
-		8041, //bottom
+		7840, //top
+		7841, //bottom
+		7860, //top
+		7861, //bottom
+		7880, //top
+		7881, //bottom
 		8100, //top
 		8101, //bottom
-		8580, //top
-		8581, //bottom
-		8600, //top
-		8601, //bottom
+		8120, //top
+		8121, //bottom
 	};
 	sparugSpawnLocation = {
 		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 - 30},
