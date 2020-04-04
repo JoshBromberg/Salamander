@@ -28,21 +28,7 @@ void SharpCrossAI::PrimaryFunction()
 	if ((parent->getPosition().y < 0 || parent->getPosition().y >Config::SCREEN_HEIGHT) && speed.y == 0) {
 		speed.y = parent->getPosition().y < 0 ? baseSpeed : -baseSpeed;
 	}
-	else if ((parent->getPosition().y >= 144 && parent->getPosition().y <= Config::SCREEN_HEIGHT - 144)) {
-		
-		bool first = false;
-		if (i == 0) {
-			first = true;
-		}
-		i += baseSpeed;
-		if (i >= 288 || i<=abs(baseSpeed) && !first) {
-			speed.y = -speed.y;
-			baseSpeed = -baseSpeed;
-		}
-	}
-	else if (baseSpeed < 0 && i<=0) {
+	if (parent->getPosition().y == 144 || parent->getPosition().y == Config::SCREEN_HEIGHT - 144) {
 		speed.y = -speed.y;
-		baseSpeed = -baseSpeed;
-		i += baseSpeed;
 	}
 }

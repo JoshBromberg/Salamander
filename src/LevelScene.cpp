@@ -136,10 +136,10 @@ void LevelScene::update()
 			++respawningWallIteration;
 		}
 	}
-	if (time >= 1776 && time <= 8600 && time % 48 == 0) {
+	if (time >= 1776 && time <= 6800 && time % 48 == 0) {
 		spawnEnemy(new WallAI({Config::SCREEN_WIDTH+120, 20}));
 	}
-	else if (time >= 1777 && time <=8600 && time % 48 == 1) {
+	else if (time >= 1777 && time <=6800 && time % 48 == 1) {
 		spawnEnemy(new WallAI({ Config::SCREEN_WIDTH + 120, Config::SCREEN_HEIGHT - 20 }));
 	}
 	#pragma endregion

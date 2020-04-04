@@ -43,8 +43,8 @@ Level1::Level1()
 		3240, //bot
 		3241, //top
 		4380, //bot
-		7736, //bot mid
-		7768 //top mid
+		5936, //bot mid
+		5968 //top mid
 	};
 	deathHandSpawnLocation = {
 		{Config::SCREEN_WIDTH + 20, -d},
@@ -65,10 +65,8 @@ Level1::Level1()
 		3361,
 		5640,
 		5641,
-		7080,
-		7081,
-		8160,
-		8161
+		6360,
+		6361
 	};
 	octaSpawnLocation = {
 		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT - Config::SCREEN_HEIGHT / 3}, //bot mid
@@ -85,6 +83,8 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 40, Config::SCREEN_HEIGHT / 3} //top mid
 	};
 	sharpCrossSpawnTimer = {
+		4860,
+		4920,
 		4980, //top
 		5040, //bot
 		5100, //top
@@ -97,30 +97,36 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
 		{Config::SCREEN_WIDTH + 48, -144},
 		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
+		{Config::SCREEN_WIDTH + 48, -144},
+		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
 		{Config::SCREEN_WIDTH + 48, Config::SCREEN_HEIGHT + 144},
 		{Config::SCREEN_WIDTH + 48, -144}
 	};
 	sparugSpawnTimer = {
-		3900, //top middle
-		3901, //bottom middle
-		3960, //top middle
-		3961, //bottom middle
-		7840, //top
-		7841, //bottom
-		7860, //top
-		7861, //bottom
-		7880, //top
-		7881, //bottom
-		8100, //top
-		8101, //bottom
-		8120, //top
-		8121, //bottom
+		2040,
+		2041,
+		3900, 
+		3901, 
+		3960, 
+		3961, 
+		6040, //top
+		6041, //bottom
+		6060, //top
+		6061, //bottom
+		6080, //top
+		6081, //bottom
+		6300, //top
+		6301, //bottom
+		6320, //top
+		6321, //bottom
 	};
 	sparugSpawnLocation = {
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 - 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 + 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 - 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 + 30},
+				{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 30},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
 		{Config::SCREEN_WIDTH + 20, 30},
 		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
 		{Config::SCREEN_WIDTH + 20, 30},
@@ -133,11 +139,11 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
 	};
 	respawningWallTimer = {
-		7690, 7691, 7692, 7693, 7694, 7695, 7696, 7697, 7698, 7699,
-		7700, 7701, 7702, 7703, 7704, 7705, 7706, 7707, 7708, 7709,
-		7710, 7711, 7712, 7713, 7714, 7715, 7716, 7717, 7718, 7719,
-		7720, 7721, 7722, 7723, 7724, 7725, 7726, 7727, 7728, 7729,
-		7730, 7731, 7732, 7733, 7734, 7735, 7736, 7737, 7738, 7739
+		5890, 5891, 5892, 5893, 5894, 5895, 5896, 5897, 5898, 5899,
+		5900, 5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909,
+		5910, 5911, 5912, 5913, 5914, 5915, 5916, 5917, 5918, 5919,
+		5920, 5921, 5922, 5923, 5924, 5925, 5926, 5927, 5928, 5929,
+		5930, 5931, 5932, 5933, 5934, 5935, 5936, 5937, 5938, 5939
 	};
 	respawningWallSpawnLocation = {
 		{Config::SCREEN_WIDTH + 250, 20},{Config::SCREEN_WIDTH + 245, 60},{Config::SCREEN_WIDTH + 240, 100},{Config::SCREEN_WIDTH + 235, 140},{Config::SCREEN_WIDTH + 230, 180},
@@ -151,19 +157,19 @@ Level1::Level1()
 		{Config::SCREEN_WIDTH + 210, 20},{Config::SCREEN_WIDTH + 205, 60},{Config::SCREEN_WIDTH + 200, 100},{Config::SCREEN_WIDTH + 195, 140},{Config::SCREEN_WIDTH + 190, 180},
 		{Config::SCREEN_WIDTH + 190, Config::SCREEN_HEIGHT - 20},{Config::SCREEN_WIDTH + 180, Config::SCREEN_HEIGHT - 60},{Config::SCREEN_WIDTH + 175, Config::SCREEN_HEIGHT - 100},{Config::SCREEN_WIDTH + 170, Config::SCREEN_HEIGHT - 140},{Config::SCREEN_WIDTH + 165, Config::SCREEN_HEIGHT - 180},
 	};
-	for (int i = 270, j = 0, k = 7772; j < 7; ++j, i += 5) {
+	for (int i = 270, j = 0, k = 5972; j < 7; ++j, i += 5) {
 		for (int z = 0;z < 7;++z, ++k) {
 			respawningWallSpawnLocation.push_back({ Config::SCREEN_WIDTH + i - z * 5, (Config::SCREEN_HEIGHT / 2 - 100) + (z * 40) });
 			respawningWallTimer.push_back(k);
 		}
 	}
-	for (int i = 600, j = 0, k = 7821; j < 12; ++j, i -= 50) {
+	for (int i = 600, j = 0, k = 6021; j < 12; ++j, i -= 50) {
 		for (int z = 0;z < 18;++z, ++k) {
 			respawningWallSpawnLocation.push_back({ Config::SCREEN_WIDTH + i - (z * 5), 20 + (z * 40) });
 			respawningWallTimer.push_back(k);
 		}
 	}
-	for (int i = 1100, j = 0, k = 8038; j < 22; ++j, i -= 50) {
+	for (int i = 1100, j = 0, k = 6238; j < 22; ++j, i -= 50) {
 		for (int z = 0;z < 18;++z, ++k) {
 			respawningWallSpawnLocation.push_back({ Config::SCREEN_WIDTH + i - (z * 5), 20 + (z * 40) });
 			respawningWallTimer.push_back(k);
