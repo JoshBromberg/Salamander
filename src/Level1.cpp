@@ -47,14 +47,14 @@ Level1::Level1()
 		7768 //top mid
 	};
 	deathHandSpawnLocation = {
-		{Config::SCREEN_WIDTH +20, -d},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
-		{Config::SCREEN_WIDTH +20, -d},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
-		{Config::SCREEN_WIDTH +20, -d},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT + d},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT/2 + d*2},
-		{Config::SCREEN_WIDTH +20, Config::SCREEN_HEIGHT / 2 - d*2}
+		{Config::SCREEN_WIDTH + 20, -d},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT + d},
+		{Config::SCREEN_WIDTH + 20, -d},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT + d},
+		{Config::SCREEN_WIDTH + 20, -d},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT + d},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 + d * 2},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT / 2 - d * 2}
 	};
 	octaSpawnTimer = {
 		2400,
