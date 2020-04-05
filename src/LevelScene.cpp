@@ -145,19 +145,18 @@ void LevelScene::update()
 	else if (time >= 1777 && time <=6800 && time % 48 == 1) {
 		spawnEnemy(new WallAI({ Config::SCREEN_WIDTH + 120, Config::SCREEN_HEIGHT - 20 }));
 	}
-
 	if (time == 7000 && !bossActive) {
 		bossActive = true;
 		playSound("Boss", 999);
-		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 0));
-		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 90));
-		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 180));
-		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 270));
-		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 15, Config::SCREEN_WIDTH / 2 }));
-		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 45, Config::SCREEN_WIDTH / 2 }));
-		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 75, Config::SCREEN_WIDTH / 2 }));
-		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 105, Config::SCREEN_WIDTH / 2 }));
-		spawnEnemy(new TetranAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_HEIGHT / 2 }, 0));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_HEIGHT / 2 }, 90));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_HEIGHT / 2 }, 180));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_HEIGHT / 2 }, 270));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 150, Config::SCREEN_HEIGHT / 2 }));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 180, Config::SCREEN_HEIGHT / 2 }));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 210, Config::SCREEN_HEIGHT / 2 }));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 240, Config::SCREEN_HEIGHT / 2 }));
+		spawnEnemy(new TetranAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_HEIGHT / 2 }));
 	}
 
 	#pragma endregion

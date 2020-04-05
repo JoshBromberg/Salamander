@@ -40,7 +40,7 @@ void TetranArmAI::SecondaryFunction()
 	TetranAI::SecondaryFunction();
 	++rotation;
 	if (rotation >= 360) {
-		--rotation;
+		rotation -= 360;
 	}
 	--firingCooldown;
 	if (firingCooldown <= 0) {

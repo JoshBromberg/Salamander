@@ -26,7 +26,7 @@ TetranAI::TetranAI(glm::vec2 transform)
 		build, 6, 6), 10,
 		this, transform, "Tetran");
 	score = 90000;
-	target = {Config::SCREEN_WIDTH-400, Config::SCREEN_HEIGHT/2};
+	target = { transform.x - 655, transform.y};
 }
 
 TetranAI::~TetranAI()
