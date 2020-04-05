@@ -4,8 +4,6 @@
 #include "RespawningWallAI.h"
 #include "Frame.h"
 #include "PlayerLockAI.h"
-#include "CannonlordAI.h"
-#include "ChaosAI.h"
 
 Enemy::Enemy(){/*DANGER! Do not use!*/ }
 
@@ -38,9 +36,6 @@ void Enemy::Damage(int i)
 	if (((RespawningWallAI*)aI)->isNotActive() && name=="RespawningWall"){
 		doDamage = false;
 	}
-	else if (((ChaosAI*)aI)->getFire() && name=="Chaos") {
-		doDamage = false;
-	}
 	if (doDamage && hitTimer <= 0) {
 		health -= i;
 		//TheGame::Instance()->destroyExplosion();
@@ -48,8 +43,13 @@ void Enemy::Damage(int i)
 		{
 			//std::cout << "Enemy dead: " << this->getName() << std::endl;
 			TheGame::Instance()->getPlayerShip()->addScore(aI->getScore());
-			TheGame::Instance()->spawnExplosion(getPosition());
-			TheGame::Instance()->destroyEnemy(this);
+			if (name == "Tetran") {
+				Game::Instance()->changeSceneState(END_SCENE);
+			}
+			else {
+				TheGame::Instance()->spawnExplosion(getPosition());
+				TheGame::Instance()->destroyEnemy(this);
+			}
 		}
 		else {
 			hitTimer = hitTimerReset;

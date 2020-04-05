@@ -1,7 +1,6 @@
 #include "Weapon.h"
 #include "MissileLauncher.h"
 #include "Cannon.h"
-#include "Flamethrower.h"
 
 Weapon::Weapon()
 {
@@ -21,9 +20,5 @@ void Weapon::Fire()
 	}
 	else if (name == "Cannon") {
 		((Cannon*)this)->Fire();
-	}
-	else if (name == "Flamethrower")
-	{
-		((Flamethrower*)this)->Fire();
 	}
 }

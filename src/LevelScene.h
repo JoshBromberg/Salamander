@@ -3,15 +3,13 @@
 #define __LEVELSCENE__
 
 #include "PlayerShip.h"
-#include "WeaponMissile.h"
 #include "AI.h"
 #include "Map.h"
 #include "Label.h"
 #include <SDL_ttf.h>
 #include "Control_Img.h"
-#include "Shield.h"
-#include "Power_Up.h"
 #include "explosion.h"
+#include "PlayerWeapon.h"
 
 class LevelScene : public Scene
 {
@@ -42,8 +40,6 @@ protected:
 	Label* m_pHighScoreLabel;
 
 	std::vector<PlayerWeapon*> playerWeapons;
-	std::vector<Shield*> m_pshields;
-	std::vector<Power_Up*> power_ups;
 	glm::vec2 shieldSpawnPos;
 	std::vector<Explosion*> m_pExplosions;
 
@@ -60,8 +56,6 @@ protected:
 private:
 	bool bossActive = false;
 	void Damage(ShipComponent sc[2]);
-	void checkShieldCollision();
-	void spawnShield(AI* enemy);
 	void collisionCheck(bool boss, AI* enemy, PlayerWeapon* pw);
 	void collisionCheck(bool boss, AI* enemy);
 	void initialize();

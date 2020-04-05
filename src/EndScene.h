@@ -40,9 +40,9 @@ private:
 
 	int entryNum = 0;
 	
-	bool naming1Done;
-	bool naming2Done;
-	bool naming3Done;
+	bool naming1Done = false;
+	bool naming2Done = false;
+	bool naming3Done = false;
 
 	std::string entryArr[36] = { "A","B","C","D","E", "F","G", "H", "I","J","K","L","M","N","O","P",
 "Q","R","S","T","U","V","W", "X","Y", "Z","0","1","2","3","4","5","6","7","8","9" };

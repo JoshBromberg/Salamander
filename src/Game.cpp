@@ -7,7 +7,6 @@
 #include "AI.h"
 #include "Level1.h"
 #include "Weapon.h"
-#include "FlameThrower.h"
 
 
 Game* Game::s_pInstance = 0;

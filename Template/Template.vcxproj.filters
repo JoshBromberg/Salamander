@@ -135,40 +135,13 @@
     <ClCompile Include="..\src\EnemyMissileAI.cpp">
       <Filter>Source Files\AIs</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ZigzagAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\FlyOntoScreenAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\BlasterSkiffAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\FirebrandAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\FireBargeAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\MissileBargeAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CannonBargeAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CannonlordAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\DeathcageAI.cpp">
       <Filter>Source Files\AIs</Filter>
     </ClCompile>
     <ClCompile Include="..\src\LevelScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\PlayerShip.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\WeaponMissile.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Weapon.cpp">
@@ -180,35 +153,14 @@
     <ClCompile Include="..\src\Cannon.cpp">
       <Filter>Source Files\ShipComponents</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Flamethrower.cpp">
-      <Filter>Source Files\ShipComponents</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Button.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Level1.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Player.cpp">
-      <Filter>Game Objects</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Map.cpp">
       <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CannoneerAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\GuardianAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\DiagonAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\BlastAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\RainAI.cpp">
-      <Filter>Source Files\AIs</Filter>
     </ClCompile>
     <ClCompile Include="..\src\PlayerWeapon.cpp">
       <Filter>Source Files\GameObjects</Filter>
@@ -216,16 +168,10 @@
     <ClCompile Include="..\src\Start_Scene_Bg.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\EnemyCannonballAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Cannonball.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Control_Img.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\FlameThrowerWeapon.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Vector2.cpp">
@@ -234,26 +180,8 @@
     <ClCompile Include="..\src\Game_Over_Bg.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Shield.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Power_Up.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Scoreboard.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\VictoryScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ChaosAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IslandAI.cpp">
-      <Filter>Source Files\AIs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EnemyFlamethrowerAI.cpp">
-      <Filter>Source Files\AIs</Filter>
     </ClCompile>
     <ClCompile Include="..\src\explosion.cpp">
       <Filter>Source Files\GameObjects</Filter>
@@ -389,40 +317,13 @@
     <ClInclude Include="..\src\EnemyMissileAI.h">
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\ZigzagAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\FlyOntoScreenAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\BlasterSkiffAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\FirebrandAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\FireBargeAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\MissileBargeAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CannonBargeAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CannonlordAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\DeathcageAI.h">
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\LevelScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\PlayerShip.h">
-      <Filter>Header Files\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\WeaponMissile.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Weapon.h">
@@ -434,17 +335,11 @@
     <ClInclude Include="..\src\Cannon.h">
       <Filter>Header Files\ShipComponents</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Flamethrower.h">
-      <Filter>Header Files\ShipComponents</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Button.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Level1.h">
       <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Player.h">
-      <Filter>Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\GameObjectType.h">
       <Filter>Enum</Filter>
@@ -455,29 +350,11 @@
     <ClInclude Include="..\src\Map.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\CannoneerAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\GuardianAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\DiagonAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\BlastAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\RainAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\PlayerWeapon.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Start_Scene_Bg.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EnemyCannonballAI.h">
-      <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Cannonball.h">
       <Filter>Header Files\GameObjects</Filter>
@@ -485,35 +362,14 @@
     <ClInclude Include="..\src\Control_Img.h">
       <Filter>Source Files\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\FlameThrowerWeapon.h">
-      <Filter>Header Files\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Game_Over_Bg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Shield.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Power_Up.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Scoreboard.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\VictoryScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ChaosAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IslandAI.h">
-      <Filter>Header Files\AIs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EnemyFlamethrowerAI.h">
-      <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\explosion.h">
       <Filter>Header Files</Filter>
@@ -523,9 +379,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Entry_Bg.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\FanAI.h">
-      <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\DeathHandAI.h">
       <Filter>Header Files\AIs</Filter>
@@ -552,6 +405,9 @@
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\TetranArmAI.h">
+      <Filter>Header Files\AIs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FanAI.h">
       <Filter>Header Files\AIs</Filter>
     </ClInclude>
   </ItemGroup>

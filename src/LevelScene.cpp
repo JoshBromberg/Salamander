@@ -27,31 +27,6 @@ LevelScene::~LevelScene()
 	
 }
 
-void LevelScene::checkShieldCollision()
-{
-	if (!m_pshields.empty())
-	{
-		for (int i = 0; i < m_pshields.size(); i++)
-		{
-			auto item = m_pshields[i];
-			if (CollisionManager::squaredRadiusCheck(player, item)
-				|| item->getPosition().x < -5.0f)
-			{
-				player->setShieldAvailable(true);
-				//item->setCollided(true);
-				m_pshields[i]->clean();
-				m_pshields.erase(m_pshields.begin() + i);
-				m_pshields.shrink_to_fit();
-				break;
-			}
-			if (TheTextureManager::Instance()->getTexture(item->getID()) != nullptr)
-			{
-				item->update();
-			}
-		}
-	}
-}
-
 void LevelScene::update()
 {
 	++time;
@@ -89,10 +64,6 @@ void LevelScene::update()
 				collisionCheck(((FlyOntoScreenAI*)enemy)->isBoss, enemy);
 			}
 		}
-	}
-	if(!m_pshields.empty())
-	{
-		checkShieldCollision();
 	}
 	#pragma endregion
 	
@@ -207,16 +178,6 @@ void LevelScene::draw()
 	//{
 	//	m_pshield->draw();
 	//}
-	if(!m_pshields.empty())
-	{
-		for(auto item : m_pshields)
-		{
-			if(TheTextureManager::Instance()->getTexture(item->getID()) != nullptr)
-			{
-				item->draw();
-			}
-		}
-	}
 	if (!m_pExplosions.empty())
 	{
 		for (auto item : m_pExplosions)
@@ -283,21 +244,6 @@ void LevelScene::addGarbage(std::string id)
 	garbage.push_back(id);
 }
 
-void LevelScene::spawnShield(AI* enemy)
-{
-	player->initializeKillCounter();
-	shieldID = "Shield" + std::to_string(idNum);
-	std::cout << "Shield ID: "<< shieldID << std::endl;
-	Shield* shield = new Shield(shieldID);
-	shieldSpawnPos = enemy->GetParent()->getPosition();
-	shield->setPosition(shieldSpawnPos);
-	shield->setVelocity
-		(glm::vec2(-5.0f, 0.0f));
-	addChild(shield);
-	m_pshields.push_back(shield);
-	//std::cout << "Shield gen\n";
-}
-
 void LevelScene::collisionCheck(bool boss, AI* enemy, PlayerWeapon* pw)
 {
 	//Collision check for Enemies versus Player Weapon
@@ -322,22 +268,12 @@ void LevelScene::collisionCheck(bool boss, AI* enemy, PlayerWeapon* pw)
 			enemy->GetParent()->Damage(1);
 			pw->Damage(1);
 		}
-		if (player->getKillCounter() > 0 &&
-			player->getKillCounter() % 20 == 0)
-		{
-			spawnShield(enemy);
-		}
 	}
 	else {
 		if (CollisionManager::AABBCheck(enemy->GetParent(), pw) && enemy->GetParent()->getType() != ENEMY_WEAPON)
 		{
 			enemy->GetParent()->Damage(1);
 			pw->Damage(1);
-		}
-		if (player->getKillCounter() > 0 &&
-			player->getKillCounter() % 20 == 0)
-		{
-			spawnShield(enemy);			
 		}
 	}
 }
