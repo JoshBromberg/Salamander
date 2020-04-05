@@ -145,8 +145,8 @@ void LevelScene::update()
 	else if (time >= 1777 && time <=6800 && time % 48 == 1) {
 		spawnEnemy(new WallAI({ Config::SCREEN_WIDTH + 120, Config::SCREEN_HEIGHT - 20 }));
 	}
-	if (time < 6999)
-		time = 6999;
+	/*if (time < 6999)
+		time = 6999;*/
 	if (time == 7000 && !bossActive) {
 		bossActive = true;
 		playSound("Boss", 999);

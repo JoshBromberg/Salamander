@@ -38,7 +38,7 @@ TetranArmAI::~TetranArmAI()
 void TetranArmAI::SecondaryFunction()
 {
 	TetranAI::SecondaryFunction();
-	rotation+=5;
+	++rotation;
 	if (rotation >= 360) {
 		rotation -= 360;
 	}

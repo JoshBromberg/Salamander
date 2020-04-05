@@ -9,6 +9,6 @@ public:
 	~TetranArmAI();
 	void SecondaryFunction() override;
 private:
-	int firingCooldown = 0, firingCooldownReset = 15;
+	int firingCooldown = 0, firingCooldownReset = 60;
 };
 #endif
