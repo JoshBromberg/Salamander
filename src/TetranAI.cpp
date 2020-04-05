@@ -35,7 +35,7 @@ TetranAI::~TetranAI()
 
 void TetranAI::SecondaryFunction()
 {
-	++i;
+	i+=3;
 	if (i >= 360) {
 		i -= 360;
 	}

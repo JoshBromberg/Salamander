@@ -10,7 +10,7 @@ public:
 	~TetranAI();
 	void SecondaryFunction() override;
 private:
-	glm::vec2 baseSpeed = { 5, 3 };
+	glm::vec2 baseSpeed = { 15, 9 };
 	int i = 90;
 };
 #endif
