@@ -1,5 +1,5 @@
 #include "DisplayObject.h"
-#include "TextureManager.h"
+#include "Game.h"
 
 Scene * DisplayObject::getParent()
 {
@@ -31,4 +31,7 @@ void DisplayObject::changeTexture(std::string idName)
 
 void DisplayObject::Damage(int i) //Do not use!
 {
+	if (name == "Cannonball") {
+		TheGame::Instance()->destroyWeapon((PlayerWeapon*)this);
+	}
 }

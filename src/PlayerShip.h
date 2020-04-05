@@ -55,6 +55,8 @@ public:
 	void setShieldAvailable(bool newState);
 
 	void initializeKillCounter();
+
+	void Fire();
 private:
 	Uint8 m_alpha;
 	float m_maxSpeed;

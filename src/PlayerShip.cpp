@@ -7,12 +7,13 @@
 #include "BasicBody.h"
 #include "MissileLauncher.h"
 #include "Blank.h"
+#include "CannonBall.h"
 #include <functional>
 #include <glm/detail/type_vec2.hpp>
 #include "Scoreboard.h"
 
 PlayerShip::PlayerShip(int health, int lives, glm::vec2 targetTransform)
-:m_isMoving(false), m_maxSpeed(5.0f), m_alpha(255),name("Player"),inv(false),killCounter(0),shieldAvailable(false)
+:m_isMoving(false), m_maxSpeed(9.0f), m_alpha(255),name("Player"),inv(false),killCounter(0),shieldAvailable(false)
 {
 	changeTexture("Player");
 	setPosition(targetTransform);
@@ -25,10 +26,10 @@ PlayerShip::PlayerShip(int health, int lives, glm::vec2 targetTransform)
 		BasicBody()
 	};
 #pragma endregion
-	frame = new Frame(1, //Player Collider is 1px by 1px
+	frame = new Frame(1,
 		build, 1, 1);
 	frame->Initialize(this);
-	playerLives = lives;
+	playerLives = 9;
 	playerHealth = health;
 }
 
@@ -128,6 +129,11 @@ void PlayerShip::setShieldAvailable(bool newState)
 void PlayerShip::initializeKillCounter()
 {
 	killCounter = 0;
+}
+
+void PlayerShip::Fire()
+{
+	TheGame::Instance()->spawnPlayerWeapon(new Cannonball(glm::vec2(getPosition().x+25, getPosition().y), glm::vec2(15, 0)));
 }
 
 Frame* PlayerShip::GetFrame()

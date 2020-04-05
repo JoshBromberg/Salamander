@@ -121,22 +121,22 @@ Level1::Level1()
 		6321, //bottom
 	};
 	sparugSpawnLocation = {
-				{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
-		{Config::SCREEN_WIDTH + 20, 30},
-		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 30},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
+		{Config::SCREEN_WIDTH + 20, 50},
+		{Config::SCREEN_WIDTH + 20, Config::SCREEN_HEIGHT - 50},
 	};
 	respawningWallTimer = {
 		5890, 5891, 5892, 5893, 5894, 5895, 5896, 5897, 5898, 5899,
@@ -228,6 +228,8 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/Tetran.png", "Tetran");
 	loadTexture("../Assets/textures/TetranShield.png", "TetranShield");
 	loadTexture("../Assets/textures/TetranArm.png", "TetranArm");
+	loadTexture("../Assets/textures/Cannonball.png", "Cannonball");
+	loadTexture("../Assets/textures/explosion.png", "Explosion");
 }
 
 void Level1::loadAllSounds()

@@ -35,10 +35,10 @@ Enemy::~Enemy()
 void Enemy::Damage(int i)
 {
 	bool doDamage = true;
-	if (((RespawningWallAI*)aI)->isActive()){
+	if (((RespawningWallAI*)aI)->isNotActive() && name=="RespawningWall"){
 		doDamage = false;
 	}
-	else if (((ChaosAI*)aI)->getFire()) {
+	else if (((ChaosAI*)aI)->getFire() && name=="Chaos") {
 		doDamage = false;
 	}
 	if (doDamage && hitTimer <= 0) {

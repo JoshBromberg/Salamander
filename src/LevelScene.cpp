@@ -194,17 +194,6 @@ void LevelScene::draw()
 	//if (m_pSpeedLabel != nullptr) {
 	//	m_pSpeedLabel->draw();
 	//}
-	if (m_pLivesLabel != nullptr) {
-		m_pLivesLabel->draw();
-	}
-	if(m_pScoreLabel != nullptr)
-	{
-		m_pScoreLabel->draw();
-	}
-	if(m_pHighScoreLabel != nullptr)
-	{
-		m_pHighScoreLabel->draw();
-	}
 
 	for (PlayerWeapon* pw : playerWeapons) {
 		pw->draw();
@@ -234,6 +223,17 @@ void LevelScene::draw()
 		{
 			item->draw();
 		}
+	}
+	if (m_pLivesLabel != nullptr) {
+		m_pLivesLabel->draw();
+	}
+	if (m_pScoreLabel != nullptr)
+	{
+		m_pScoreLabel->draw();
+	}
+	if (m_pHighScoreLabel != nullptr)
+	{
+		m_pHighScoreLabel->draw();
 	}
 }
 
@@ -344,6 +344,9 @@ void LevelScene::collisionCheck(bool boss, AI* enemy, PlayerWeapon* pw)
 
 void LevelScene::collisionCheck(bool boss, AI* enemy)
 {
+	if (enemy->GetParent()->getName() == "RespawningWall" && ((RespawningWallAI*)enemy)->isNotActive()) {
+		return;
+	}
 	//Collision Check used for enemies versus player
 	if (boss)
 	{

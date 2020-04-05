@@ -13,7 +13,7 @@ glm::vec2 ShipComponent::getPosition()
 		  offsetY = (iD.y - (parent->GridHeight() - 1) / 2) * parent->getGridSize();
 	float posX = parentPosition.x + offsetX,
 		  posY = parentPosition.y + offsetY;
-	if (parent->getParent()->getName() != "Player") {
+	if (parent->getParent()->getName() != "Player" && parent->getParent()->getName() != "Cannonball") {
 		if (((Enemy*)parent->getParent())->getAI()->HasRotation()) {
 			float angle = ((FlyOntoScreenAI*)((Enemy*)parent->getParent())->getAI())->getRotation() * M_PI / 180;
 			return glm::vec2(

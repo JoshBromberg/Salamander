@@ -20,7 +20,7 @@ void StartScene::draw()
 	m_pStartButton->draw();
 	m_pInstructionsButton->draw();
 	m_pExitButton->draw();
-	m_pLoadButton->draw();
+	//m_pLoadButton->draw();
 	if (instructions) {
 		m_pInstructionsText->draw();
 	}
@@ -31,7 +31,7 @@ void StartScene::update()
 	m_pStartButton->setMousePosition(m_mousePosition);
 	m_pInstructionsButton->setMousePosition(m_mousePosition);
 	m_pExitButton->setMousePosition(m_mousePosition);
-	m_pLoadButton->setMousePosition(m_mousePosition);
+	//m_pLoadButton->setMousePosition(m_mousePosition);
 	
 	if(m_pStartButton->ButtonClick())
 	{
@@ -45,10 +45,10 @@ void StartScene::update()
 	{
 		exit(0);
 	}
-	else if(m_pLoadButton->ButtonClick())
+	/*else if(m_pLoadButton->ButtonClick())
 	{
 		//Load();
-	}
+	}*/
 }
 
 void StartScene::clean()
@@ -57,7 +57,7 @@ void StartScene::clean()
 	delete m_pStartButton;
 	delete m_pInstructionsButton;
 	delete m_pExitButton;
-	delete m_pLoadButton;
+	//delete m_pLoadButton;
 	removeAllChildren();
 }
 
@@ -84,7 +84,7 @@ void StartScene::handleEvents()
 				m_pStartButton->setMouseButtonClicked(true);
 				m_pInstructionsButton->setMouseButtonClicked(true);
 				m_pExitButton->setMouseButtonClicked(true);
-				m_pLoadButton->setMouseButtonClicked(true);
+				//m_pLoadButton->setMouseButtonClicked(true);
 				break;
 			}
 
@@ -96,7 +96,7 @@ void StartScene::handleEvents()
 				m_pStartButton->setMouseButtonClicked(false);
 				m_pInstructionsButton->setMouseButtonClicked(false);
 				m_pExitButton->setMouseButtonClicked(false);
-				m_pLoadButton->setMouseButtonClicked(false);
+				//m_pLoadButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
@@ -136,13 +136,10 @@ void StartScene::start()
 		INSTRUCTIONS_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.75f));
 	addChild(m_pInstructionsButton);
 	
-	m_pExitButton = new Button("ExitButton",
-		EXIT_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.9f));
-	addChild(m_pExitButton);
 
-	m_pLoadButton = new Button("LoadButton",
-		LOAD_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.75f));
-	addChild(m_pLoadButton);
+	m_pExitButton = new Button("ExitButton",
+		EXIT_BUTTON, glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.75f));
+	addChild(m_pExitButton);
 	
 	m_pInstructionsText = new Label("Use WASD or arrow keys to move. Left-Click to fire.", "FSEX300",
 		40, {(255), (255), (255), (255)}, glm::vec2(Config::SCREEN_WIDTH * 0.1f, Config::SCREEN_HEIGHT * 0.1f),

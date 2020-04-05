@@ -12,7 +12,7 @@ TetranShieldAI::TetranShieldAI(glm::vec2 transform)
 	};
 #pragma endregion
 	parent = new Enemy(new Frame(30, //Enemy is 30px by 90px
-		build, 1, 3), 3,
+		build, 1, 3), 5,
 		this, transform, "TetranShield");
 	score = 0;
 	target = { transform.x - 655, transform.y };

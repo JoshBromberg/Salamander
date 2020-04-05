@@ -86,12 +86,14 @@ void EndScene::handleEvents()
 				if(!naming1Done)
 				{
 					naming1Done = true;
+					entryNum = 0;
 					//std::cout << naming1Done;
 					break;
 				}
 				if(naming1Done && !naming2Done)
 				{
 					naming2Done = true;
+					entryNum = 0;
 					//std::cout << naming2Done;
 					break;
 				}
@@ -165,8 +167,7 @@ void EndScene::start()
 	}
 	
 	loadAllSounds();
-	SDL_Color red = { 255, 0, 0, 255 };
-	m_Label = new Label("Push R key to restart the game.", "Dock51", 40, red, 
+	m_Label = new Label("Push R key to restart the game.", "FSEX300", 40, white, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.9f));
 	m_Label->setParent(this);
 	addChild(m_Label);
@@ -188,31 +189,30 @@ void EndScene::loadAllSounds()
 void EndScene::displayEntry()
 {
 	loadTexture("../Assets/textures/entry.png", "entry");
+
 	
-	SDL_Color red = { 255, 0, 0, 255 };
-	
-	m_namingLabel1 = new Label("A", "Consolas", 40, red,
+	m_namingLabel1 = new Label("A", "FSEX300", 40, white,
 		glm::vec2(Config::SCREEN_WIDTH * 0.425f, Config::SCREEN_HEIGHT * 0.5f));
 	m_namingLabel1->setParent(this);
 	addChild(m_namingLabel1);
-	m_namingLabel2 = new Label("A", "Consolas", 40, red,
+	m_namingLabel2 = new Label("A", "FSEX300", 40, white,
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
 	m_namingLabel2->setParent(this);
 	addChild(m_namingLabel2);
-	m_namingLabel3 = new Label("A", "Consolas", 40, red,
+	m_namingLabel3 = new Label("A", "FSEX300", 40, white,
 		glm::vec2(Config::SCREEN_WIDTH * 0.575f, Config::SCREEN_HEIGHT * 0.5f));
 	m_namingLabel3->setParent(this);
 	addChild(m_namingLabel3);
 	m_instructionLabel1 = new Label(
-		"Push up/down arrow key to choose character for name", "Consolas",
-		20, red,
-		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.65f));
+		"Push up/down arrow key to choose character for name", "FSEX300",
+		30, white,
+		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.78f));
 	m_instructionLabel1->setParent(this);
 	addChild(m_instructionLabel1);
 	instructionLabel2 = new Label(
-		"Push space bar to decide a character for name", "Consolas",
-		20, red,
-		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.75f));
+		"Push space bar to decide a character for name", "FSEX300",
+		30, white,
+		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.84f));
 	instructionLabel2->setParent(this);
 	addChild(instructionLabel2);
 
@@ -221,7 +221,7 @@ void EndScene::displayEntry()
 	m_pEntry->setParent(this);
 	addChild(m_pEntry);
 	
-	highscoreListLabel = new Label("HighscoreList", "Consolas", 20, black,
+	highscoreListLabel = new Label("HighscoreList", "FSEX300", 20, white,
 		glm::vec2(Config::SCREEN_WIDTH * 0.9f, Config::SCREEN_HEIGHT * 0.3f));
 	highscoreListLabel->setParent(this);
 	addChild(highscoreListLabel);
@@ -249,14 +249,14 @@ void EndScene::generateEntrylabels()
 			if(i < 1)
 			{
 				Label* playerNameLabel = new Label(Scoreboard::Instance()->getPlayerEntry()[i]->getName(),
-					"Consolas", 40, black,
+					"FSEX300", 40, white,
 					glm::vec2(Config::SCREEN_WIDTH * 0.85f, Config::SCREEN_HEIGHT * 0.4f),false,true);
 				playerNameLabel->setParent(this);
 				addChild(playerNameLabel);
 				entryLabels.push_back(playerNameLabel);
 				Label* playerScoreLabel
 					= new Label(std::to_string(Scoreboard::Instance()->getPlayerEntry()[i]->getScore()),
-						"Consolas", 40, black,
+						"FSEX300", 40, white,
 						glm::vec2(Config::SCREEN_WIDTH * 0.95f, Config::SCREEN_HEIGHT * 0.4f),false, true);
 				playerScoreLabel->setParent(this);
 				addChild(playerScoreLabel);
@@ -265,14 +265,14 @@ void EndScene::generateEntrylabels()
 			else
 			{
 				Label* playerNameLabel = new Label(Scoreboard::Instance()->getPlayerEntry()[i]->getName(),
-					"Consolas", 40, black,
+					"FSEX300", 40, white,
 					glm::vec2(Config::SCREEN_WIDTH * 0.85f, Config::SCREEN_HEIGHT * (0.4f + i*0.05f)),false, true);
 				playerNameLabel->setParent(this);
 				addChild(playerNameLabel);
 				entryLabels.push_back(playerNameLabel);
 				Label* playerScoreLabel
 					= new Label(std::to_string(Scoreboard::Instance()->getPlayerEntry()[i]->getScore()),
-						"Consolas", 40, black,
+						"FSEX300", 40, white,
 						glm::vec2(Config::SCREEN_WIDTH * 0.95f, Config::SCREEN_HEIGHT * (0.4f + i * 0.05f)),false, true);
 				playerScoreLabel->setParent(this);
 				addChild(playerScoreLabel);

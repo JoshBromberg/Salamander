@@ -6,7 +6,7 @@
 class Game_Over_Bg :public DisplayObject
 {
 public:
-	Game_Over_Bg(std::string imagePath = "../Assets/textures/GameOver_Bg.png",
+	Game_Over_Bg(std::string imagePath = "../Assets/textures/Menu.png",
 		std::string name = "Game_Over_Bg",
 		GameObjectType type = GAME_OVER_BG,
 		glm::vec2 position = glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f), bool isCentered = true);

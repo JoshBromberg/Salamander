@@ -13,7 +13,7 @@ SharpCrossAI::SharpCrossAI(glm::vec2 transform)
 	};
 #pragma endregion
 	parent = new Enemy(new Frame(96, //Enemy is 96px by 288px
-		build, 1, 3), 1,
+		build, 1, 3), 99,
 		this, transform, transform.y >= Config::SCREEN_HEIGHT / 2 ? "SharpCross" : "SharpCross2");
 	score = 0;
 	speed.x = -5;

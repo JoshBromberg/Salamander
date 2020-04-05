@@ -223,10 +223,8 @@ void Game::update()
 {
 	m_currentScene->update();
 	m_currentScene->handleEvents();
-	for (int z = 0; z < 3; ++z) {
-		if (firingCooldown[z] > 0) {
-			--firingCooldown[z];
-		}
+	if (firingCooldown > 0) {
+		--firingCooldown;
 	}
 }
 
@@ -278,64 +276,12 @@ void Game::handleEvents()
 		if (keystates[SDL_SCANCODE_Z] || SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_LEFT))
 			if (getPlayerShip()->getPlayerLives() >= 0)
 			{
-				for (int z = 0; z < 3; ++z) 
+				if (firingCooldown == 0) 
 				{
-					if (firingCooldown[z] == 0) 
-					{
-						
-						//getPlayerShip()->GetFrame()->GetWeapon(z).Fire();
-						firingCooldown[z] = firingCooldownReset[z];
-					}
+					getPlayerShip()->Fire();
+					firingCooldown = firingCooldownReset;
 				}
 			}
-		if(keystates[SDL_SCANCODE_1])
-		{
-			getPlayerShip()->setPlayerSpeed(3.0f);
-		}
-		if (keystates[SDL_SCANCODE_2])
-		{
-			getPlayerShip()->setPlayerSpeed(3.5f);
-		}
-		if (keystates[SDL_SCANCODE_3])
-		{
-			getPlayerShip()->setPlayerSpeed(4.0f);
-		}
-		if (keystates[SDL_SCANCODE_4])
-		{
-			getPlayerShip()->setPlayerSpeed(4.5f);
-		}
-		if (keystates[SDL_SCANCODE_5])
-		{
-			getPlayerShip()->setPlayerSpeed(5.0f);
-		}
-		if (keystates[SDL_SCANCODE_6])
-		{
-			getPlayerShip()->setPlayerSpeed(5.5f);
-		}
-		if (keystates[SDL_SCANCODE_7])
-		{
-			getPlayerShip()->setPlayerSpeed(6.0f);
-		}
-		if (keystates[SDL_SCANCODE_8])
-		{
-			getPlayerShip()->setPlayerSpeed(6.5f);
-		}
-		if (keystates[SDL_SCANCODE_9])
-		{
-			getPlayerShip()->setPlayerSpeed(7.0f);
-		}
-		if (keystates[SDL_SCANCODE_0])
-		{
-			getPlayerShip()->setPlayerSpeed(7.5f);
-		}
-		if (keystates[SDL_SCANCODE_MINUS])
-		{
-			getPlayerShip()->setPlayerSpeed(8.0f);
-		}
-		if (keystates[SDL_SCANCODE_EQUALS])
-		{
-			getPlayerShip()->setPlayerSpeed(8.5f);
-		}
 	}
 	if (keystates[SDL_SCANCODE_KP_0])
 	{

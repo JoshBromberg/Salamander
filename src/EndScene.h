@@ -21,6 +21,7 @@ public:
 	virtual void start() override;
 
 private:
+	SDL_Color white = { 255, 255, 255, 255 };
 	void loadAllSounds();
 	void displayEntry();
 	void generateEntry();

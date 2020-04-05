@@ -33,6 +33,7 @@ void RespawningWallAI::PrimaryFunction()
 		lastHealth = parent->getHealth();
 		active = false;
 		respawnTimer = respawnTimerReset;
+		std::cout << "ran!" << std::endl;
 	}
 }
 

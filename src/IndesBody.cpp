@@ -9,6 +9,7 @@ IndesBody::IndesBody(bool projectile)
 IndesBody::~IndesBody(){}
 void IndesBody::Damage(ShipComponent collision)
 {
+	std::cout << "What up boys" << std::endl;
 	if (isProjectile)
 	{
 		try
@@ -20,7 +21,7 @@ void IndesBody::Damage(ShipComponent collision)
 			}
 		}
 		catch (_exception){}
-		if (parent->getParent()->getName() == "Missile") {
+		if (parent->getParent()->getName() == "Cannonball") {
 			Game::Instance()->destroyWeapon((PlayerWeapon*)getParent()->getParent());
 		}
 		else {
