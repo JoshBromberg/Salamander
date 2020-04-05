@@ -6,6 +6,9 @@
 #include "SparugAI.h"
 #include "RespawningWallAI.h"
 #include "WallAI.h"
+#include "TetranAI.h"
+#include "TetranShieldAI.h"
+#include "TetranArmAI.h"
 #include "BasicBody.h"
 #include "IndesBody.h"
 #include "CollisionManager.h"
@@ -142,6 +145,21 @@ void LevelScene::update()
 	else if (time >= 1777 && time <=6800 && time % 48 == 1) {
 		spawnEnemy(new WallAI({ Config::SCREEN_WIDTH + 120, Config::SCREEN_HEIGHT - 20 }));
 	}
+
+	if (time == 7000 && !bossActive) {
+		bossActive = true;
+		playSound("Boss", 999);
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 0));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 90));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 180));
+		spawnEnemy(new TetranArmAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }, 270));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 15, Config::SCREEN_WIDTH / 2 }));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 45, Config::SCREEN_WIDTH / 2 }));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 75, Config::SCREEN_WIDTH / 2 }));
+		spawnEnemy(new TetranShieldAI({ Config::SCREEN_WIDTH + 105, Config::SCREEN_WIDTH / 2 }));
+		spawnEnemy(new TetranAI({ Config::SCREEN_WIDTH + 255, Config::SCREEN_WIDTH / 2 }));
+	}
+
 	#pragma endregion
 
 	if(player->getPlayerLives() < 0)
@@ -400,7 +418,7 @@ glm::vec2 LevelScene::getPlayerPosition()
 void LevelScene::spawnEnemy(AI* enemyAI)
 {
 	if (spawnedEnemy == false) {
-		if (!enemyAI->GetParent()->getName().find("Wall")) {
+		if (!enemyAI->GetParent()->getName().find("Wall") && !enemyAI->GetParent()->getName().find("Tetran")) {
 			spawnedEnemy = true;
 		}
 		enemies.push_back(enemyAI);

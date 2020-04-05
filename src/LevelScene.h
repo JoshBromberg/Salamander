@@ -58,6 +58,7 @@ protected:
 
 	int level;
 private:
+	bool bossActive = false;
 	void Damage(ShipComponent sc[2]);
 	void checkShieldCollision();
 	void spawnShield(AI* enemy);

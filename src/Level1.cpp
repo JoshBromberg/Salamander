@@ -225,10 +225,14 @@ void Level1::loadAllTextures()
 	loadTexture("../Assets/textures/EnemyMissile.png", "EnemyMissile");
 	loadTexture("../Assets/textures/RespawningWall.png", "RespawningWall");
 	loadTexture("../Assets/textures/Wall.png", "Wall");
+	loadTexture("../Assets/textures/Tetran.png", "Tetran");
+	loadTexture("../Assets/textures/TetranShield.png", "TetranShield");
+	loadTexture("../Assets/textures/TetranArm.png", "TetranArm");
 }
 
 void Level1::loadAllSounds()
 {
 	loadSound("../Assets/audio/LevelMusicStart.ogg", "Level1", SOUND_MUSIC);
 	loadSound("../Assets/audio/LevelMusicLoop.ogg", "Level1Loop", SOUND_MUSIC);
+	loadSound("../Assets/audio/BossMusic.ogg", "Boss", SOUND_MUSIC);
 }
