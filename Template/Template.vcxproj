@@ -227,6 +227,9 @@
     <ClCompile Include="..\src\StartScene.cpp" />
     <ClCompile Include="..\src\Start_Scene_Bg.cpp" />
     <ClCompile Include="..\src\Target.cpp" />
+    <ClCompile Include="..\src\TetranAI.cpp" />
+    <ClCompile Include="..\src\TetranArmAI.cpp" />
+    <ClCompile Include="..\src\TetranShieldAI.cpp" />
     <ClCompile Include="..\src\TextureManager.cpp" />
     <ClCompile Include="..\src\Util.cpp" />
     <ClCompile Include="..\src\Vector2.cpp" />
@@ -312,6 +315,9 @@
     <ClInclude Include="..\src\StartScene.h" />
     <ClInclude Include="..\src\Start_Scene_Bg.h" />
     <ClInclude Include="..\src\Target.h" />
+    <ClInclude Include="..\src\TetranAI.h" />
+    <ClInclude Include="..\src\TetranArmAI.h" />
+    <ClInclude Include="..\src\TetranShieldAI.h" />
     <ClInclude Include="..\src\TextureManager.h" />
     <ClInclude Include="..\src\Util.h" />
     <ClInclude Include="..\src\Vector2.h" />
