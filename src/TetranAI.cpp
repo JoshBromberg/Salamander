@@ -40,6 +40,6 @@ void TetranAI::SecondaryFunction()
 		i -= 360;
 	}
 	float ir = i * M_PI / 180;
-	Vector2 spd = { cos(ir) * baseSpeed, sin(ir) * baseSpeed };
+	Vector2 spd = { cos(ir) * baseSpeed.x, sin(ir) * baseSpeed.y };
 	speed = { spd.x, spd.y };
 }
